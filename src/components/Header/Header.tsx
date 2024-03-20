@@ -1,6 +1,6 @@
 import { redirect, useLocation, useNavigate } from "react-router";
 import Button from "../Button/Button";
-import Icons from "../../assets";
+import Icons from "../../assets/icons";
 
 const Header = () => {
   const navigate = useNavigate();

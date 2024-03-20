@@ -101,7 +101,13 @@ const useSpeedLines = () => {
   }, []);
 
   if (!canvas) return;
-  return <div ref={(ref) => ref?.appendChild(canvas)} />;
+  return (
+    <div
+      ref={(ref) => {
+        if (ref?.children.length === 0) ref?.appendChild(canvas);
+      }}
+    />
+  );
 };
 
 export default useSpeedLines;

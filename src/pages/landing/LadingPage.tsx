@@ -5,6 +5,9 @@ const LandingPage = () => {
   return (
     <div className="LandingPage">
       <div className="LandingPage__background">{Canvas}</div>
+      <div className="LandingPage__about">
+        <div className="LandingPage__about__fold" />
+      </div>
     </div>
   );
 };

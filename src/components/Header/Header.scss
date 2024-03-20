@@ -25,6 +25,9 @@
     gap: 14px;
 
     &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 5px 10px;
       border: 2px solid transparent;
       font-weight: 18px;
@@ -38,6 +41,10 @@
       &.selected {
         border: 2px solid $color-mono1000;
         border-radius: 999px;
+      }
+
+      &:last-child {
+        padding: 2px;
       }
     }
   }

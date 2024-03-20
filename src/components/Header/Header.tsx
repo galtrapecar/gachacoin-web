@@ -1,5 +1,6 @@
 import { redirect, useLocation, useNavigate } from "react-router";
 import Button from "../Button/Button";
+import Icons from "../../assets";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Header = () => {
       isVisible: isWalletConnected,
     },
     {
-      label: "Settings",
+      label: <Icons.GearIcon width={24} height={24} />,
       route: "/settings",
       isVisible: () => true,
     },

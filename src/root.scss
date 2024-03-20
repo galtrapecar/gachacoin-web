@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+@import './_definitions.scss';
+
+@import './App.scss';
+
+@import './components/Header/Header.scss';
+@import './components/Button/Button.scss';
+@import './components/PageHeading/PageHeading.scss';

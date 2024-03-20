@@ -1,0 +1,32 @@
+.PageHeading {
+  width: 100%;
+  height: 104px;
+  display: flex;
+  flex-direction: row;
+  padding: 29px 32px;
+  font-size: 40px;
+  font-weight: 500;
+  border-bottom: 2px solid $color-mono1000;
+  background-color: $color-mono000;
+
+  &__wrapper {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__title {
+    font-size: inherit;
+    font-family: inherit;
+    color: $color-mono1000;
+  }
+
+  &__symbol {
+    color: $color-mono1000;
+  }
+
+  &__subtitle {
+    font-size: inherit;
+    font-weight: inherit;
+    color: $color-mono700;
+  }
+}

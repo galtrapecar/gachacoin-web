@@ -1,0 +1,43 @@
+.Header {
+  height: 60px;
+  background-color: $color-mono000;
+  border-bottom: 1px solid $color-mono1000;
+  display: flex;
+  align-items: center;
+  padding: 11px 25px;
+
+  &__logo {
+    font-size: 32px;
+    color: $color-mono700;
+    font-weight: 300;
+  }
+
+  .Button {
+    margin-left: 24px;
+  }
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+
+    &__item {
+      padding: 5px 10px;
+      border: 2px solid transparent;
+      font-weight: 18px;
+      color: $color-mono700;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-mono1000;
+      }
+
+      &.selected {
+        border: 2px solid $color-mono1000;
+        border-radius: 999px;
+      }
+    }
+  }
+}

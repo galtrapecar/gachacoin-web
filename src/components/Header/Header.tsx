@@ -38,9 +38,11 @@ const Header = () => {
   return (
     <div
       className="Header"
-      style={location.pathname !== "/" ? { border: "none" } : undefined}
+      style={location.pathname !== "/" ? { borderBottom: "1px solid transparent" } : undefined}
     >
-      <div className="Header__logo">GachaCoin</div>
+      <div className="Header__logo" onClick={() => navigate("/")}>
+        GachaCoin
+      </div>
       <Button style="primary" label={"Connect wallet"} />
       <div className="Header__nav">
         {navItems.map((navItem) => {

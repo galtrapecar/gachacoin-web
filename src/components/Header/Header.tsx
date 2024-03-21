@@ -53,7 +53,7 @@ const Header = () => {
         GachaCoin
       </div>
       <WalletPopUp isVisible={WalletPopUpStatus} />
-      <Button style="primary" label={"Connect wallet"} handlePopup={() => closePopUp()} />
+      <Button style="primary" label={"Connect wallet"} onClick={() => closePopUp()} />
       <div className="Header__nav">
         {navItems.map((navItem) => {
           if (!navItem.isVisible()) return;

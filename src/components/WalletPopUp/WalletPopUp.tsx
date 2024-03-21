@@ -1,10 +1,10 @@
 import React from 'react'
 import Button from '../Button/Button'
-import Icons from "../../assets/icons";
+import Icons from '../../assets/icons'
 
 export type WalletPopUpProps = {
   isVisible: boolean
-};
+}
 
 const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
   return isVisible ? (
@@ -15,8 +15,8 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
         <Icons.MetaMaskIcon width={153} height={141} />
       </div>
 
-      <Button style='primary' label='Use MetaMask' handlePopup={() => null}/>
-      <Button style='primary' label='Use Phantom' handlePopup={() => null}/>
+      <Button style='primary' label='Use MetaMask' />
+      <Button style='primary' label='Use Phantom' />
     </div>
   ) : null
 }

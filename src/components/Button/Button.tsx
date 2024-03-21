@@ -1,16 +1,20 @@
 export type ButtonProps = {
-  icon?: JSX.Element;
-  label: string;
-  style: "primary" | "secondary" | "tertiary";
-  handlePopup: () => void
-};
-
-const Button = ({ label, icon, style, handlePopup }: ButtonProps) => {
-
-  return <div className={`Button ${style}`} onClick={() => handlePopup()}>
-      <div className="Button__background" />
-      <div className="Button__label">{icon}{label}</div>
-    </div>
+  icon?: JSX.Element
+  label: string
+  style: 'primary' | 'secondary' | 'tertiary'
+  onClick?: () => void
 }
 
-export default Button;
+const Button = ({ label, icon, style, onClick }: ButtonProps) => {
+  return (
+    <div className={`Button ${style}`} onClick={onClick}>
+      <div className='Button__background' />
+      <div className='Button__label'>
+        {icon}
+        {label}
+      </div>
+    </div>
+  )
+}
+
+export default Button

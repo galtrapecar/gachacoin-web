@@ -9,8 +9,8 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
   return isVisible ? (
     <div className='WalletPopUp'>
       <h1>Select the wallet to connect</h1>
-      <Button style='primary' label='Use MetaMask' handlePopup={() => null}/>
-      <Button style='primary' label='Use Phantom' handlePopup={() => null}/>
+      <Button style='primary' label='Use MetaMask' />
+      <Button style='primary' label='Use Phantom' />
     </div>
   ) : null
 }

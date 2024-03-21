@@ -1,12 +1,20 @@
 import { redirect, useLocation, useNavigate } from "react-router";
+import { useRecoilState } from "recoil";
+import { WalletPopupStatusAtom } from "../../state";
 import Button from "../Button/Button";
 import Icons from "../../assets/icons";
+import WalletPopUp from "../WalletPopUp/WalletPopUp";
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const isWalletConnected = () => false;
+  const [WalletPopUpStatus, setWalletPopUpStatus] = useRecoilState(WalletPopupStatusAtom);
+
+  const closePopUp = () => {
+    setWalletPopUpStatus(!WalletPopUpStatus)
+  }
 
   const navItems = [
     {
@@ -44,7 +52,8 @@ const Header = () => {
       <div className="Header__logo" onClick={() => navigate("/")}>
         GachaCoin
       </div>
-      <Button style="primary" label={"Connect wallet"} />
+      <WalletPopUp isVisible={WalletPopUpStatus} />
+      <Button style="primary" label={"Connect wallet"} handlePopup={() => closePopUp()} />
       <div className="Header__nav">
         {navItems.map((navItem) => {
           if (!navItem.isVisible()) return;

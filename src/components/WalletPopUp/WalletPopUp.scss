@@ -1,0 +1,13 @@
+.WalletPopUp {
+  width: 100%;
+  max-width: 542px;
+  height: 808px;
+  background-color:#FFFFFF;
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  border-radius: 25px;
+  border: 10px solid gray;
+}

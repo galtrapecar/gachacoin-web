@@ -11,10 +11,6 @@ const Header = () => {
   const isWalletConnected = () => false;
   const setWalletPopUpStatus = useSetRecoilState(WalletPopupStatusAtom);
 
-  const closePopUp = () => {
-    setWalletPopUpStatus(false);
-  };
-
   const openPopUp = () => {
     setWalletPopUpStatus(true);
   };

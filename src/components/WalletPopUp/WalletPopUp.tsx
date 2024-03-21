@@ -2,12 +2,22 @@ import React, { useEffect } from 'react';
 import Button from '../Button/Button';
 import Icons from '../../assets/icons';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
+import { useSetRecoilState } from 'recoil'
+import { WalletPopupStatusAtom } from '../../state'
+
 
 export type WalletPopUpProps = {
   isVisible: boolean;
 };
 
-const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
+const WalletPopUp = ({ isVisible, }: WalletPopUpProps) => {
+
+  const setWalletPopUpStatus = useSetRecoilState(WalletPopupStatusAtom);
+
+  const closePopUp = () => {
+    setWalletPopUpStatus(false);
+  };
+
   // removes scroll for the page while the pop-up is open
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -34,7 +44,7 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
         <Button style='primary' label='Use MetaMask' borderWidth={6} />
       </div>
 
-      <div className='shader' />
+      <div className='shader' onClick={closePopUp}/>
     </>
   ) : null;
 };

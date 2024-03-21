@@ -1,3 +1,5 @@
+import RainbowBorder from "../RainbowBorder/RainbowBorder";
+
 export type ButtonProps = {
   icon?: JSX.Element;
   label: string;
@@ -8,7 +10,7 @@ export type ButtonProps = {
 const Button = ({ label, icon, style, onClick }: ButtonProps) => {
   return (
     <div className={`Button ${style}`} onClick={onClick}>
-      <div className="Button__background" />
+      <RainbowBorder backgroundColor={"#000000"} borderRadius={25} width={2} />
       <div className="Button__label">
         {icon}
         {label}

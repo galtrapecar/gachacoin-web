@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import Icons from "../../assets/icons";
+import RainbowBorder from "../RainbowBorder/RainbowBorder";
 
 export type WalletPopUpProps = {
   isVisible: boolean;
@@ -9,7 +10,7 @@ export type WalletPopUpProps = {
 const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
   return isVisible ? (
     <div className="WalletPopUp">
-      <div className="WalletPopUp__background" />
+      <RainbowBorder backgroundColor={"#ffffff"} borderRadius={25} width={10} />
       <h1>Select the wallet to connect</h1>
       <div>
         <Icons.PhantomIcon width={169} height={141} />

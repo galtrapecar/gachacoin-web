@@ -1,6 +1,4 @@
 .WalletPopUp {
-  position: relative;
-  z-index: 1;
   width: 100%;
   max-width: 542px;
   height: 808px;
@@ -14,15 +12,7 @@
   padding: 10px;
   background: $gradient;
 
-  &__background {
-    position: absolute;
+  .RainbowBorder {
     z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    background-color: $color-mono000;
-    border-radius: 16px;
   }
 }

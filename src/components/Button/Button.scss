@@ -44,12 +44,5 @@
     border: none;
   }
 
-  background-image: linear-gradient(
-    90deg,
-    #aefffa 0%,
-    #aeffc5 22.5%,
-    #fffcae 49%,
-    #fdaeff 74%,
-    #ff6477 100%
-  );
+  background-image: $gradient;
 }

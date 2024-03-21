@@ -1,8 +1,8 @@
 export type ButtonProps = {
   icon?: JSX.Element;
   label: string;
-  style: "primary" | "secondary" | "tertiary";
   onClick?: () => void;
+  style: "primary" | "secondary" | "tertiary";
 };
 
 const Button = ({ label, icon, style, onClick }: ButtonProps) => {

@@ -11,8 +11,37 @@
   border-radius: 25px;
   padding: 10px;
   background: $gradient;
+  text-align: center;
 
   .RainbowBorder {
     z-index: -1;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-top: 84px;
+  }
+
+  .Button {
+    display: block;
+    padding: 15px 40px;
+    width: 367px;
+    margin-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Button__label {
+    font-size: 40px;
+  }
+
+  &__icons {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 44px;
+    margin-top: 122px;
+    margin-bottom: 156px;
   }
 }

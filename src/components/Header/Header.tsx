@@ -10,11 +10,13 @@ const Header = () => {
   const location = useLocation();
 
   const isWalletConnected = () => false;
-  const [WalletPopUpStatus, setWalletPopUpStatus] = useRecoilState(WalletPopupStatusAtom);
+  const [WalletPopUpStatus, setWalletPopUpStatus] = useRecoilState(
+    WalletPopupStatusAtom
+  );
 
   const closePopUp = () => {
-    setWalletPopUpStatus(!WalletPopUpStatus)
-  }
+    setWalletPopUpStatus(!WalletPopUpStatus);
+  };
 
   const navItems = [
     {
@@ -47,13 +49,21 @@ const Header = () => {
   return (
     <div
       className="Header"
-      style={location.pathname !== "/" ? { borderBottom: "1px solid transparent" } : undefined}
+      style={
+        location.pathname !== "/"
+          ? { borderBottom: "1px solid transparent" }
+          : undefined
+      }
     >
       <div className="Header__logo" onClick={() => navigate("/")}>
         GachaCoin
       </div>
       <WalletPopUp isVisible={WalletPopUpStatus} />
-      <Button style="primary" label={"Connect wallet"} onClick={() => closePopUp()} />
+      <Button
+        style="primary"
+        label={"Connect wallet"}
+        onClick={() => closePopUp()}
+      />
       <div className="Header__nav">
         {navItems.map((navItem) => {
           if (!navItem.isVisible()) return;

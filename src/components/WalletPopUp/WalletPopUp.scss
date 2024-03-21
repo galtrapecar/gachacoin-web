@@ -1,7 +1,8 @@
 .WalletPopUp {
   width: 100%;
   max-width: 542px;
-  height: 808px;
+  height: 95%;
+  max-height: 808px;
   background-color: #ffffff;
   z-index: 999;
   position: fixed;
@@ -44,4 +45,15 @@
     margin-top: 122px;
     margin-bottom: 156px;
   }
+}
+
+.shader {
+    position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      /* Adjust the opacity here */
+      z-index: 200;
 }

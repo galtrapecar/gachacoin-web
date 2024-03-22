@@ -1,0 +1,49 @@
+.card {
+  max-width: 240px;
+  max-height: 305px;
+  border-radius: 17px;
+  border-radius: 17px;
+  border: 2px solid black;
+  margin: 40px;
+  background-color: $color-mono000;
+  display: inline-block;
+
+  &__image {
+    margin: 6px 8px;
+    max-width: 224px;
+    max-height: 221px;
+    border-radius: 17px;
+    position: relative;
+    border: 3px solid rgb(141, 136, 136);
+
+    &__container {
+      width: 100%;
+      max-height: 221px;
+      border-radius: 17px;
+      position: relative;
+    }
+  }
+
+  &__text__container {
+    display: inline-block;
+    margin: 8px 10px 40px 10px;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &__serial {
+    font-size: 8px;
+  }
+
+  &__icon_container {
+    width: 26px;
+    height: 27px;
+    margin-left: 201px;
+    margin-right: 8px;
+    margin-bottom: 7px;
+  }
+}

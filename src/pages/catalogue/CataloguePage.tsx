@@ -86,7 +86,7 @@ const CataloguePage = () => {
   return (
     <div className='CataloguePage'>
       <PageHeading title={'Catalogue'} symbol={symbol} subtitle={'カタログ'} />
-      <div className='cards'>
+      <div className='CataloguePage__cards'>
         {cards.map((card, index) => (
           <CatalogueCard key={index} {...card} />
         ))}

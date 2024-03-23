@@ -1,15 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
-@import './_definitions.scss';
+@import "./_definitions.scss";
 
-@import './App.scss';
-@import './pages/landing/LandingPage.scss';
+@import "./App.scss";
+@import "./pages/landing/LandingPage.scss";
+@import "./pages/settings/SettingsPage.scss";
+@import "./pages/settings/components/AppSettings.scss";
 
-@import './components/Header/Header.scss';
-@import './components/Button/Button.scss';
-@import './components/PageHeading/PageHeading.scss';
+@import "./components/CircleDropdown/CircleDropdown.scss";
+@import "./components/Header/Header.scss";
+@import "./components/CardHeader/CardHeader.scss";
+@import "./components/Button/Button.scss";
+@import "./components/PageHeading/PageHeading.scss";

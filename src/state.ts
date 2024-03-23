@@ -6,9 +6,15 @@ export enum AppColor {
   Pink = 'pink',
 }
 
+export enum AppSymbol {
+  Dot = '•',
+  Star = '★',
+  Heart = '♥',
+}
+
 export const symbolAtom = atom({
   key: "symbolAtom",
-  default: "•",
+  default: AppSymbol.Dot,
 });
 
 export const colorAtom = atom({

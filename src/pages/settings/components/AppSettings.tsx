@@ -3,7 +3,7 @@ import CardHeader from "../../../components/CardHeader/CardHeader";
 import CircleDropdown, {
   CircleDropdownItem,
 } from "../../../components/CircleDropdown/CircleDropdown";
-import { AppColor, colorAtom, symbolAtom } from "../../../state";
+import { AppColor, AppSymbol, colorAtom, symbolAtom } from "../../../state";
 
 const AppSettings = () => {
   const [symbol, setSymbol] = useRecoilState(symbolAtom);
@@ -13,9 +13,13 @@ const AppSettings = () => {
     setColor(color);
   };
 
+  const onSelectSymbol = (symbol: AppSymbol) => {
+    setSymbol(symbol);
+  };
+
   const getColorIconClass = (color: string) => {
-    return `AppSettings__${color} AppSettings__colorIcon`
-  }
+    return `AppSettings__${color} AppSettings__colorIcon`;
+  };
 
   const colorItems: CircleDropdownItem[] = [
     {
@@ -38,6 +42,27 @@ const AppSettings = () => {
     },
   ];
 
+  const symbolItems: CircleDropdownItem[] = [
+    {
+      label: "Dot",
+      icon: <div>{AppSymbol.Dot}</div>,
+      value: AppSymbol.Dot,
+      onSelect: onSelectSymbol,
+    },
+    {
+      label: "Star",
+      icon: <div>{AppSymbol.Star}</div>,
+      value: AppSymbol.Star,
+      onSelect: onSelectSymbol,
+    },
+    {
+      label: "Heart",
+      icon: <div>{AppSymbol.Heart}</div>,
+      value: AppSymbol.Heart,
+      onSelect: onSelectSymbol,
+    },
+  ];
+
   return (
     <div className="AppSettings SettingsPage__card">
       <CardHeader title={"App Settings"} subtitle={"アプリの設定"} />
@@ -45,6 +70,7 @@ const AppSettings = () => {
         <div className="AppSettings__item">
           <div className="AppSettings__item__title">Page Color</div>
           <CircleDropdown
+            style={{zIndex: 999}}
             closeOnSelect
             icon={<div className={getColorIconClass(color)} />}
             items={colorItems}
@@ -52,6 +78,12 @@ const AppSettings = () => {
         </div>
         <div className="AppSettings__item">
           <div className="AppSettings__item__title">Page Icon</div>
+          <CircleDropdown
+            style={{zIndex: 998}}
+            closeOnSelect
+            icon={<div className="AppSettings__symbolIcon">{symbol}</div>}
+            items={symbolItems}
+          />
         </div>
       </div>
     </div>

@@ -11,9 +11,15 @@ type CircleDropdownProps = {
   items: CircleDropdownItem[];
   icon: JSX.Element;
   closeOnSelect?: boolean;
+  style?: React.CSSProperties;
 };
 
-const CircleDropdown = ({ items, icon, closeOnSelect }: CircleDropdownProps) => {
+const CircleDropdown = ({
+  items,
+  icon,
+  closeOnSelect,
+  style,
+}: CircleDropdownProps) => {
   const [open, setOpen] = useState(false);
 
   const closeDropdown = (e: MouseEvent) => {
@@ -36,7 +42,7 @@ const CircleDropdown = ({ items, icon, closeOnSelect }: CircleDropdownProps) => 
   }, [icon]);
 
   return (
-    <div className="CircleDropdown">
+    <div className="CircleDropdown" style={style}>
       <div
         onClick={() => setOpen(true)}
         style={{ width: "100%", height: "100%" }}

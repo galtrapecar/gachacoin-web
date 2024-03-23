@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export type CircleDropdownItem = {
   label: string;
@@ -25,19 +25,19 @@ const CircleDropdown = ({
   const closeDropdown = (e: MouseEvent) => {
     if (e.target instanceof Element) {
       if (
-        Array.from(e.target.classList).join(" ").includes(icon.props.className)
+        Array.from(e.target.classList).join(' ').includes(icon.props.className)
       )
         return;
-      if (e.target.classList.contains("CircleDropdown__list")) return;
-      if (e.target.classList.contains("CircleDropdown__list__item")) return;
+      if (e.target.classList.contains('CircleDropdown__list')) return;
+      if (e.target.classList.contains('CircleDropdown__list__item')) return;
     }
     setOpen(false);
   };
 
   useEffect(() => {
-    document.addEventListener("click", closeDropdown);
+    document.addEventListener('click', closeDropdown);
     return () => {
-      document.removeEventListener("click", closeDropdown);
+      document.removeEventListener('click', closeDropdown);
     };
   }, [icon]);
 
@@ -45,13 +45,13 @@ const CircleDropdown = ({
     <div className="CircleDropdown" style={style}>
       <div
         onClick={() => setOpen(true)}
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: '100%', height: '100%' }}
       >
         {icon}
       </div>
       <div
         className="CircleDropdown__list"
-        style={!open ? { display: "none" } : undefined}
+        style={!open ? { display: 'none' } : undefined}
       >
         {items.map((item) => {
           return (

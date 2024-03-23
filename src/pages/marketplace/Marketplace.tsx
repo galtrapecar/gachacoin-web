@@ -1,15 +1,15 @@
-import { useRecoilValue } from "recoil";
-import PageHeading from "../../components/PageHeading/PageHeading";
-import { symbolAtom } from "../../state";
+import { useRecoilValue } from 'recoil';
+import PageHeading from '../../components/PageHeading/PageHeading';
+import { symbolAtom } from '../../state';
 
 const MarketplacePage = () => {
   const symbol = useRecoilValue(symbolAtom);
   return (
     <div className="MarketplacePage">
       <PageHeading
-        title={"Marketplace"}
+        title={'Marketplace'}
         symbol={symbol}
-        subtitle={"カタログ"}
+        subtitle={'カタログ'}
       />
     </div>
   );

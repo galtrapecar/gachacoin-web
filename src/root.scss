@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
-@import "./_definitions.scss";
+@import './_definitions.scss';
 
 @import './App.scss';
 @import './pages/catalogue/CataloguePage.scss';

@@ -1,6 +1,6 @@
-import React from "react";
-import RainbowBorder from "../RainbowBorder/RainbowBorder";
-import Icons from "../../assets/icons";
+import React from 'react';
+import RainbowBorder from '../RainbowBorder/RainbowBorder';
+import Icons from '../../assets/icons';
 
 export type CatalogueCardProps = {
   name: string;

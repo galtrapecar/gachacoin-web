@@ -1,4 +1,4 @@
-import useSpeedLines from "../../hooks/useSpeedLines";
+import useSpeedLines from '../../hooks/useSpeedLines';
 
 const LandingPage = () => {
   const Canvas = useSpeedLines();

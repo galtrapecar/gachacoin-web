@@ -1,8 +1,8 @@
-import { useLocation, useNavigate } from "react-router";
-import { useSetRecoilState } from "recoil";
-import { WalletPopupStatusAtom } from "../../state";
-import Button from "../Button/Button";
-import Icons from "../../assets/icons";
+import { useLocation, useNavigate } from 'react-router';
+import { useSetRecoilState } from 'recoil';
+import { WalletPopupStatusAtom } from '../../state';
+import Button from '../Button/Button';
+import Icons from '../../assets/icons';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,28 +17,28 @@ const Header = () => {
 
   const navItems = [
     {
-      label: "About",
-      route: "/about",
+      label: 'About',
+      route: '/about',
       isVisible: () => true,
     },
     {
-      label: "Catalogue",
-      route: "/catalogue",
+      label: 'Catalogue',
+      route: '/catalogue',
       isVisible: () => true,
     },
     {
-      label: "Marketplace",
-      route: "/marketplace",
+      label: 'Marketplace',
+      route: '/marketplace',
       isVisible: () => true,
     },
     {
-      label: "Avatar",
-      route: "/avatar",
+      label: 'Avatar',
+      route: '/avatar',
       isVisible: isWalletConnected,
     },
     {
       label: <Icons.GearIcon width={24} height={24} />,
-      route: "/settings",
+      route: '/settings',
       isVisible: () => true,
     },
   ];
@@ -47,18 +47,18 @@ const Header = () => {
     <div
       className="Header"
       style={
-        location.pathname !== "/"
-          ? { borderBottom: "1px solid transparent" }
+        location.pathname !== '/'
+          ? { borderBottom: '1px solid transparent' }
           : undefined
       }
     >
-      <div className="Header__logo" onClick={() => navigate("/")}>
+      <div className="Header__logo" onClick={() => navigate('/')}>
         GachaCoin
       </div>
 
       <Button
         style="primary"
-        label={"Connect wallet"}
+        label={'Connect wallet'}
         onClick={() => openPopUp()}
       />
       <div className="Header__nav">
@@ -68,9 +68,9 @@ const Header = () => {
             <div
               key={navItem.route}
               className={[
-                "Header__nav__item",
-                `${location.pathname === navItem.route ? "selected" : ""}`,
-              ].join(" ")}
+                'Header__nav__item',
+                `${location.pathname === navItem.route ? 'selected' : ''}`,
+              ].join(' ')}
               onClick={() => navigate(navItem.route)}
             >
               {navItem.label}

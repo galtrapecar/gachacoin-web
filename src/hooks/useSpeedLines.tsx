@@ -1,12 +1,12 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from 'react';
 
 const useSpeedLines = () => {
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
 
   useLayoutEffect(() => {
     // logic from https://codepen.io/jsonyeung/pen/JwLMYr
-    const canvas = document.createElement("canvas") as HTMLCanvasElement;
-    const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+    const canvas = document.createElement('canvas') as HTMLCanvasElement;
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
     setCanvas(canvas);
 
     let cw = (canvas.width = window.innerWidth);
@@ -93,7 +93,7 @@ const useSpeedLines = () => {
     animate();
 
     // Resize
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       cw = canvas.width = window.innerWidth;
       ch = canvas.height = window.innerHeight;
       updateLines();

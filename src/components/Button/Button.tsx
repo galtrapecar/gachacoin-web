@@ -1,11 +1,11 @@
-import RainbowBorder from "../RainbowBorder/RainbowBorder";
+import RainbowBorder from '../RainbowBorder/RainbowBorder';
 
 export type ButtonProps = {
   borderWidth?: number;
   icon?: JSX.Element;
   label: string;
   onClick?: () => void;
-  style: "primary" | "secondary" | "tertiary";
+  style: 'primary' | 'secondary' | 'tertiary';
 };
 
 const Button = ({
@@ -18,7 +18,7 @@ const Button = ({
   return (
     <div className={`Button ${style}`} onClick={onClick}>
       <RainbowBorder
-        background={"#000000"}
+        background={'#000000'}
         borderRadius={999}
         width={borderWidth}
       />

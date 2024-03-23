@@ -1,9 +1,9 @@
-import { useRecoilState } from "recoil";
-import CardHeader from "../../../components/CardHeader/CardHeader";
+import { useRecoilState } from 'recoil';
+import CardHeader from '../../../components/CardHeader/CardHeader';
 import CircleDropdown, {
   CircleDropdownItem,
-} from "../../../components/CircleDropdown/CircleDropdown";
-import { AppColor, AppSymbol, colorAtom, symbolAtom } from "../../../state";
+} from '../../../components/CircleDropdown/CircleDropdown';
+import { AppColor, AppSymbol, colorAtom, symbolAtom } from '../../../state';
 
 const AppSettings = () => {
   const [symbol, setSymbol] = useRecoilState(symbolAtom);
@@ -23,19 +23,19 @@ const AppSettings = () => {
 
   const colorItems: CircleDropdownItem[] = [
     {
-      label: "Baby Blue",
+      label: 'Baby Blue',
       icon: <div className={getColorIconClass(AppColor.Blue)} />,
       value: AppColor.Blue,
       onSelect: onSelectColor,
     },
     {
-      label: "Money Green",
+      label: 'Money Green',
       icon: <div className={getColorIconClass(AppColor.Green)} />,
       value: AppColor.Green,
       onSelect: onSelectColor,
     },
     {
-      label: "Hot Pink",
+      label: 'Hot Pink',
       icon: <div className={getColorIconClass(AppColor.Pink)} />,
       value: AppColor.Pink,
       onSelect: onSelectColor,
@@ -44,19 +44,19 @@ const AppSettings = () => {
 
   const symbolItems: CircleDropdownItem[] = [
     {
-      label: "Dot",
+      label: 'Dot',
       icon: <div>{AppSymbol.Dot}</div>,
       value: AppSymbol.Dot,
       onSelect: onSelectSymbol,
     },
     {
-      label: "Star",
+      label: 'Star',
       icon: <div>{AppSymbol.Star}</div>,
       value: AppSymbol.Star,
       onSelect: onSelectSymbol,
     },
     {
-      label: "Heart",
+      label: 'Heart',
       icon: <div>{AppSymbol.Heart}</div>,
       value: AppSymbol.Heart,
       onSelect: onSelectSymbol,
@@ -65,7 +65,7 @@ const AppSettings = () => {
 
   return (
     <div className="AppSettings SettingsPage__card">
-      <CardHeader title={"App Settings"} subtitle={"アプリの設定"} />
+      <CardHeader title={'App Settings'} subtitle={'アプリの設定'} />
       <div className="AppSettings__items">
         <div className="AppSettings__item">
           <div className="AppSettings__item__title">Page Color</div>

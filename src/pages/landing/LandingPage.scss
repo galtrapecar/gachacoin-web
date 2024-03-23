@@ -27,7 +27,7 @@
       background-color: rgba($color: $color-mono1000, $alpha: 0.7);
       clip-path: polygon(45% 0, 55% 0, 100% 100%, 0% 100%);
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         z-index: -1;
         top: calc(50% + 1px);

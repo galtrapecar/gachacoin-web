@@ -1,12 +1,12 @@
-import { AppColor } from "./state";
+import { AppColor } from './state';
 
 export const appColorToHex = (color: AppColor) => {
   switch (color) {
     case AppColor.Blue:
-      return "#effbff";
+      return '#effbff';
     case AppColor.Green:
-      return "#fafff9";
+      return '#fafff9';
     case AppColor.Pink:
-      return "#fff6fe";
+      return '#fff6fe';
   }
 };

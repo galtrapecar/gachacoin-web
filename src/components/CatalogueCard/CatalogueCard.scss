@@ -1,18 +1,15 @@
-.card {
-  max-width: 240px;
-  max-height: 305px;
+.CatalogueCard {
+  width: 240px;
+  height: 305px;
   border-radius: 17px;
   border-radius: 17px;
   border: 2px solid black;
-  margin: 40px;
   background-color: $color-mono000;
   display: inline-block;
 
   &__image {
-    margin: 6px 8px;
     width: 224px;
     height: 221px;
-    border-radius: 17px;
     position: relative;
 
     &__container {
@@ -20,6 +17,9 @@
       max-height: 221px;
       border-radius: 17px;
       position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 6px 0;
     }
   }
 

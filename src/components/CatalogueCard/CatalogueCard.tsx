@@ -16,18 +16,22 @@ const CatalogueCard: React.FC<CatalogueCardProps> = ({
   collection,
 }) => {
   return (
-    <div className='card'>
-      <div className='card__image__container'>
-        <div className="card__image">
-          <RainbowBorder background={`url(${require('../../assets/images/placeholder.jpeg')})`} width={3} borderRadius={17} />
+    <div className='CatalogueCard'>
+      <div className='CatalogueCard__image__container'>
+        <div className='CatalogueCard__image'>
+          <RainbowBorder
+            background={`url(${require('../../assets/images/placeholder.jpeg')})`}
+            width={3}
+            borderRadius={8}
+            overlayRadius={6}
+          />
         </div>
-
       </div>
-      <div className='card__text__container'>
-        <p className='card__title'>{name}</p>
-        <p className='card__serial'>{serial}</p>
+      <div className='CatalogueCard__text__container'>
+        <p className='CatalogueCard__title'>{name}</p>
+        <p className='CatalogueCard__serial'>{serial}</p>
       </div>
-      <div className='card__icon_container'>
+      <div className='CatalogueCard__icon_container'>
         <Icons.CollectionIcon width={27} height={27} />
       </div>
     </div>

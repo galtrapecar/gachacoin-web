@@ -2,29 +2,29 @@ export type RainbowBorderProps = {
   background: string;
   borderRadius: number;
   width: number;
+  overlayRadius?: number;
 };
 
 const RainbowBorder = ({
   background,
   borderRadius,
   width,
+  overlayRadius,
 }: RainbowBorderProps) => {
   return (
     <div
-      className="RainbowBorder"
+      className='RainbowBorder'
       style={{
         borderRadius: borderRadius,
-      }}
-    >
+      }}>
       <div
-        className="RainbowBorder__overlay"
+        className='RainbowBorder__overlay'
         style={{
           background: background,
-          borderRadius: borderRadius * 0.64,
+          borderRadius: overlayRadius || borderRadius * 0.64,
           width: `calc(100% - ${width * 2}px)`,
           height: `calc(100% - ${width * 2}px)`,
-        }}
-      ></div>
+        }}></div>
     </div>
   );
 };

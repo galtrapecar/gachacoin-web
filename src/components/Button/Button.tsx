@@ -17,7 +17,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <div className={`Button ${style}`} onClick={onClick}>
-      <RainbowBorder backgroundColor={'#000000'} borderRadius={999} width={borderWidth} />
+      <RainbowBorder background={'#000000'} borderRadius={999} width={borderWidth} />
       <div className='Button__label'>
         {icon}
         {label}

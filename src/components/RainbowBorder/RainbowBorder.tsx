@@ -1,11 +1,11 @@
 export type RainbowBorderProps = {
-  backgroundColor: string;
+  background: string;
   borderRadius: number;
   width: number;
 };
 
 const RainbowBorder = ({
-  backgroundColor,
+  background,
   borderRadius,
   width,
 }: RainbowBorderProps) => {
@@ -19,7 +19,7 @@ const RainbowBorder = ({
       <div
         className="RainbowBorder__overlay"
         style={{
-          backgroundColor: backgroundColor,
+          background: background,
           borderRadius: borderRadius * 0.64,
           width: `calc(100% - ${width * 2}px)`,
           height: `calc(100% - ${width * 2}px)`,

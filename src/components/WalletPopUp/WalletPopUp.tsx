@@ -28,7 +28,7 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
     <>
       <div className='WalletPopUp'>
         <RainbowBorder
-          backgroundColor={'#ffffff'}
+          background={'#ffffff'}
           borderRadius={25}
           width={10}
         />

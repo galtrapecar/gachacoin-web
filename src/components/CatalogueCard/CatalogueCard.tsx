@@ -18,12 +18,10 @@ const CatalogueCard: React.FC<CatalogueCardProps> = ({
   return (
     <div className='card'>
       <div className='card__image__container'>
-        <img
-          className='card__image'
-          src={require('../../assets/images/placeholder.jpeg')}
-          alt=''
-        />
-        {/* <RainbowBorder backgroundColor='#ffffff' width={3} borderRadius={17} /> */}
+        <div className="card__image">
+          <RainbowBorder background={`url(${require('../../assets/images/placeholder.jpeg')})`} width={3} borderRadius={17} />
+        </div>
+
       </div>
       <div className='card__text__container'>
         <p className='card__title'>{name}</p>

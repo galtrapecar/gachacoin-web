@@ -10,11 +10,10 @@
 
   &__image {
     margin: 6px 8px;
-    max-width: 224px;
-    max-height: 221px;
+    width: 224px;
+    height: 221px;
     border-radius: 17px;
     position: relative;
-    border: 3px solid rgb(141, 136, 136);
 
     &__container {
       width: 100%;

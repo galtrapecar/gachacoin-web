@@ -20,6 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "format": "prettier \"./src/**/*.{ts,tsx}\" --write",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "prettier": "^3.2.5",
     "sass": "^1.72.0"
   }
 }

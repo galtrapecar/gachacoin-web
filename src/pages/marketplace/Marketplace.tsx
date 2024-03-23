@@ -6,7 +6,11 @@ const MarketplacePage = () => {
   const symbol = useRecoilValue(symbolAtom);
   return (
     <div className="MarketplacePage">
-      <PageHeading title={"Marketplace"} symbol={symbol} subtitle={"カタログ"} />
+      <PageHeading
+        title={"Marketplace"}
+        symbol={symbol}
+        subtitle={"カタログ"}
+      />
     </div>
   );
 };

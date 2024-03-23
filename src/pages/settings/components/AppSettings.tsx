@@ -70,7 +70,7 @@ const AppSettings = () => {
         <div className="AppSettings__item">
           <div className="AppSettings__item__title">Page Color</div>
           <CircleDropdown
-            style={{zIndex: 999}}
+            style={{ zIndex: 999 }}
             closeOnSelect
             icon={<div className={getColorIconClass(color)} />}
             items={colorItems}
@@ -79,7 +79,7 @@ const AppSettings = () => {
         <div className="AppSettings__item">
           <div className="AppSettings__item__title">Page Icon</div>
           <CircleDropdown
-            style={{zIndex: 998}}
+            style={{ zIndex: 998 }}
             closeOnSelect
             icon={<div className="AppSettings__symbolIcon">{symbol}</div>}
             items={symbolItems}

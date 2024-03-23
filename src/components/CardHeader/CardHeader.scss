@@ -1,0 +1,15 @@
+.CardHeader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    color: $color-mono1000;
+  }
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-mono700;
+  }
+}

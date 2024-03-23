@@ -8,12 +8,16 @@
 @import './_definitions.scss';
 
 @import './App.scss';
-@import './pages/landing/LandingPage.scss';
 @import './pages/catalogue/CataloguePage.scss';
+@import './pages/landing/LandingPage.scss';
+@import './pages/settings/components/AppSettings.scss';
+@import './pages/settings/SettingsPage.scss';
 
-@import './components/RainbowBorder/RainbowBorder.scss';
-@import './components/Header/Header.scss';
 @import './components/Button/Button.scss';
-@import './components/PageHeading/PageHeading.scss';
-@import './components/WalletPopUp/WalletPopUp.scss';
+@import './components/CardHeader/CardHeader.scss';
 @import './components/CatalogueCard/CatalogueCard.scss';
+@import './components/CircleDropdown/CircleDropdown.scss';
+@import './components/Header/Header.scss';
+@import './components/PageHeading/PageHeading.scss';
+@import './components/RainbowBorder/RainbowBorder.scss';
+@import './components/WalletPopUp/WalletPopUp.scss';

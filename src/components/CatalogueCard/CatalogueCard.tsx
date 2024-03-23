@@ -1,6 +1,7 @@
 import React from 'react';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
 import Icons from '../../assets/icons';
+import placeholder from '../../assets/images/placeholder.jpeg';
 
 export type CatalogueCardProps = {
   name: string;
@@ -15,7 +16,7 @@ const CatalogueCard = ({ name, link, serial }: CatalogueCardProps) => {
       <div className="CatalogueCard__image__container">
         <div className="CatalogueCard__image">
           <RainbowBorder
-            background={`url(${link && require(link)})`}
+            background={`url(${placeholder})`}
             width={3}
             borderRadius={8}
             overlayRadius={6}

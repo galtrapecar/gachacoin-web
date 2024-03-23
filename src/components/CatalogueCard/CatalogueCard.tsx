@@ -1,6 +1,6 @@
-import React from 'react';
-import RainbowBorder from '../RainbowBorder/RainbowBorder';
-import Icons from '../../assets/icons';
+import React from "react";
+import RainbowBorder from "../RainbowBorder/RainbowBorder";
+import Icons from "../../assets/icons";
 
 export type CatalogueCardProps = {
   name: string;
@@ -9,29 +9,24 @@ export type CatalogueCardProps = {
   collection: string;
 };
 
-const CatalogueCard: React.FC<CatalogueCardProps> = ({
-  name,
-  link,
-  serial,
-  collection,
-}) => {
+const CatalogueCard = ({ name, link, serial }: CatalogueCardProps) => {
   return (
-    <div className='CatalogueCard'>
-      <div className='CatalogueCard__image__container'>
-        <div className='CatalogueCard__image'>
+    <div className="CatalogueCard">
+      <div className="CatalogueCard__image__container">
+        <div className="CatalogueCard__image">
           <RainbowBorder
-            background={`url(${require('../../assets/images/placeholder.jpeg')})`}
+            background={`url(${link && require(link)})`}
             width={3}
             borderRadius={8}
             overlayRadius={6}
           />
         </div>
       </div>
-      <div className='CatalogueCard__text__container'>
-        <p className='CatalogueCard__title'>{name}</p>
-        <p className='CatalogueCard__serial'>{serial}</p>
+      <div className="CatalogueCard__text__container">
+        <p className="CatalogueCard__title">{name}</p>
+        <p className="CatalogueCard__serial">{serial}</p>
       </div>
-      <div className='CatalogueCard__icon_container'>
+      <div className="CatalogueCard__icon_container">
         <Icons.CollectionIcon width={27} height={27} />
       </div>
     </div>
@@ -39,7 +34,3 @@ const CatalogueCard: React.FC<CatalogueCardProps> = ({
 };
 
 export default CatalogueCard;
-
-// FIXME: Rainbow image border
-// FIXME: Positioning of collection icon
-// FIXME: Dinamicly render image and collection icon

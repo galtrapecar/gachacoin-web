@@ -5,6 +5,11 @@
   font-family: 'Inter', sans-serif;
 }
 
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
 @import './_definitions.scss';
 
 @import './App.scss';

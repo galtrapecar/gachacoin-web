@@ -24,7 +24,7 @@ export const colorAtom = atom({
 
 export type Wallet = {
   type: 'phantom' | 'metamask';
-}
+};
 
 export const walletAtom = atom<Wallet | null>({
   key: 'walletAtom',

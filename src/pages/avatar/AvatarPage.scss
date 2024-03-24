@@ -1,5 +1,17 @@
 .AvatarPage {
   height: calc(100vh - 104px - 60px);
+  &__drawerCards {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 24px;
+    .CatalogueCard {
+      transition: 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
   &__avatar {
     position: relative;
     height: 100%;
@@ -13,7 +25,7 @@
       position: relative;
     }
     & svg {
-        color: $color-mono700;
+      color: $color-mono700;
     }
     &__head {
       cursor: pointer;

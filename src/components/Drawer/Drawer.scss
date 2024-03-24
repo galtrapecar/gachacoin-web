@@ -1,0 +1,39 @@
+.Drawer {
+  height: calc(100vh - 104px - 60px);
+  max-width: 0 !important;
+  background-color: $color-mono000;
+  border-left: 2px solid $color-mono1000;
+  margin-right: -2px;
+  overflow: scroll;
+  transition: all 0.3s;
+  animation: close 0.3s forwards;
+  &__close {
+    cursor: pointer;
+  }
+  &.open {
+    padding: 24px;
+    animation: open 0.3s forwards;
+  }
+}
+
+@keyframes open {
+  from {
+    max-width: 0;
+    min-width: 0;
+  }
+  to {
+    max-width: 40vw;
+    min-width: 288px;
+  }
+}
+
+@keyframes close {
+  from {
+    max-width: 40vw;
+    min-width: 288px;
+  }
+  to {
+    max-width: 0;
+    min-width: 0;
+  }
+}

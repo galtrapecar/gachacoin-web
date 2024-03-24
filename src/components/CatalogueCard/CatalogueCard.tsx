@@ -1,6 +1,5 @@
 import React from 'react';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
-import Icons from '../../assets/icons';
 
 export type CatalogueCardProps = {
   collection: string;

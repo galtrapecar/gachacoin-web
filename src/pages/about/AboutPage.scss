@@ -2,6 +2,7 @@
   &__content {
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     .__navigation__panel {
       display: flex;
@@ -12,16 +13,44 @@
       align-items: center;
       gap: 27px;
       margin: 27px 0 40px 0;
+      background: url('../../assets/images/background.jpg') center center repeat;
+      background-size: 10em;
+      position: relative;
+    }
+
+    .__coin__icon {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+
+    .__introduction__text {
+      margin-right: auto;
+      margin-left: auto;
+      width: 60%;
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      background-color: aqua;
+      display: block;
+      font-size: 30px;
+      font-weight: 300;
+      
+
+      &.__team {
+        padding-right: 500px;
+      }
+
+      &.__manifesto {
+
+      }
     }
 
     .__teamMember__cards__container {
-
     }
-
-
   }
-
-
-
-
 }

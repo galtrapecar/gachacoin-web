@@ -54,29 +54,32 @@ const AboutPage = () => {
           <Button style="secondary" label="White paper" />
           <Button style="secondary" label="FAQ" />
         </div>
-        <Icons.Coin width={125} height={125} />
-        <p>
+        <Icons.Coin width={125} height={125} className="__coin__icon" />
+        <p className="__introduction__text">
           With Gocha, users collect digital Kawaii collectables that can be
           equipped to their avatars! Each Gocha item is released in limited
           amounts, influencing its value. Players can acquire new items by
           either trading with other players or spinning the Gocha-Slot-Machine.
           In both cases different amount of the native GochaCoin crypt currency
-          are required. Gocha is one of the world’s first blockchain digitally
-          wearable collectables. Blockchain is the technology that makes things
-          like Bitcoin possible. While Gocha isn’t a digital currency, it does
-          offer the same security: Each Gocha is available in limited supply and
-          100% owned by you. It cannot be replicated, taken away, or destroyed.
+          are required.
         </p>
-        <h2>GochaCoin Team</h2>
+        <p className="__introduction__text">
+          Gocha is one of the world's first blockchain digitally wearable
+          collectables. Blockchain is the technology that makes things like
+          Bitcoin possible. While Gocha isn't a digital currency, it does offer
+          the same security: Each Gocha is available in limited supply and 100%
+          owned by you. It cannot be replicated, taken away, or destroyed.
+        </p>
+        <h2 className="__team">GochaCoin Team</h2>
         <div className="__teamMember__cards__container">
           {teamMembers.map((member, index) => (
-            <div>{member.name}</div>
+            <div key={index}>{member.name}</div>
           ))}
         </div>
-        <h2>The Gocha Manifesto</h2>
+        <h2 className="__manifesto">The Gocha Manifesto</h2>
         <div className="__manifesto__container">
           <p>
-            What we believe in, what we stand for, and why we’re building Gocha.
+            What we believe in, what we stand for, and why we're building Gocha.
             The future is exciting. And we believe that blockchain is the
             future—but blockchain is about as approachable as a bunch of ones
             and zeroes. We want a future for everyone, not one exclusive to
@@ -84,8 +87,8 @@ const AboutPage = () => {
           </p>
           <p>
             So why Digital weeaboo Collectables? Cats are impossible to
-            understand. They’re ambassadors for pharaohs, memes, and your mom’s
-            facebook page. They don’t discriminate; they despise everyone
+            understand. They're ambassadors for pharaohs, memes, and your mom's
+            facebook page. They don't discriminate; they despise everyone
             equally
           </p>
           <h5>The future is Gocha</h5>
@@ -97,3 +100,5 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
+// FIXME: Scroll not working

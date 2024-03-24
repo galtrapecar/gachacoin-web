@@ -1,22 +1,28 @@
 import React from 'react';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
 import Icons from '../../assets/icons';
-import placeholder from '../../assets/images/placeholder.jpeg';
 
 export type CatalogueCardProps = {
-  name: string;
-  link?: string;
-  serial: number;
   collection: string;
+  collectionImage?: string;
+  image?: string;
+  name: string;
+  serial: number;
 };
 
-const CatalogueCard = ({ name, link, serial }: CatalogueCardProps) => {
+const CatalogueCard = ({
+  collection,
+  collectionImage,
+  image,
+  name,
+  serial,
+}: CatalogueCardProps) => {
   return (
     <div className="CatalogueCard">
       <div className="CatalogueCard__image__container">
         <div className="CatalogueCard__image">
           <RainbowBorder
-            background={`url(${placeholder})`}
+            background={`white url(${image})`}
             width={3}
             borderRadius={8}
             overlayRadius={6}
@@ -25,11 +31,11 @@ const CatalogueCard = ({ name, link, serial }: CatalogueCardProps) => {
       </div>
       <div className="CatalogueCard__text__container">
         <p className="CatalogueCard__title">{name}</p>
-        <p className="CatalogueCard__serial">{serial}</p>
+        <p className="CatalogueCard__serial">
+          {serial} of 5 in {collection}
+        </p>
       </div>
-      <div className="CatalogueCard__icon_container">
-        <Icons.CollectionIcon width={27} height={27} />
-      </div>
+      <div className="CatalogueCard__icon_container"><img src={collectionImage} width={27} height={27}/></div>
     </div>
   );
 };

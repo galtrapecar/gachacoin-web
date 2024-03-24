@@ -1,0 +1,77 @@
+.MarketplaceCard {
+  background-color: $color-mono000;
+  border-radius: 17px;
+  border-radius: 17px;
+  border: 2px solid black;
+  display: inline-block;
+  height: 305px;
+  position: relative;
+  width: 240px;
+
+  &__image {
+    height: 178px;
+    position: relative;
+    width: 224px;
+
+    &__container {
+      border-radius: 17px;
+      display: flex;
+      justify-content: center;
+      padding: 6px 0;
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  &__info__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px 0 15px;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__price {
+    font-size: 8px;
+    font-weight: 600;
+  }
+
+  &__seller {
+    font-size: 8px;
+    font-weight: 600;
+  }
+
+  &__icon {
+    margin-right: 5px;
+  }
+
+  &__button__container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+    width: 100%;
+  }
+
+  .Button {
+    height: 29px;
+    width: 92px;
+  }
+
+  .Button__label {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &__serial {
+    bottom: 3px;
+    font-size: 8px;
+    position: absolute;
+    right: 10px;
+  }
+}

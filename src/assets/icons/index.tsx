@@ -5,15 +5,17 @@ import { ReactComponent as MetaMaskIcon } from './MetaMask.svg';
 import { ReactComponent as PhantomIcon } from './Phantom.svg';
 import { ReactComponent as PlusCircleIcon } from './PlusCircle.svg';
 import { ReactComponent as EthIcon } from './Eth.svg';
+import { ReactComponent as Coin } from './GachaCoin.svg';
 
 const Icons = {
   CheckmarkIcon,
+  Coin,
   CollectionIcon,
+  EthIcon,
   GearIcon,
   MetaMaskIcon,
   PhantomIcon,
   PlusCircleIcon,
-  EthIcon
 };
 
 export default Icons;

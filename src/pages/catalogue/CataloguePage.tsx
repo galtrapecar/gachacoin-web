@@ -1,13 +1,13 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 import PageHeading from '../../components/PageHeading/PageHeading';
-import { filteredCards, symbolAtom } from '../../state';
+import { cardsAtom, filteredCards, symbolAtom } from '../../state';
 import CatalogueCard from '../../components/CatalogueCard/CatalogueCard';
 import { Doge } from '../../assets/images';
 
 const CataloguePage = () => {
   const symbol = useRecoilValue(symbolAtom);
-  const cards = useRecoilValue(filteredCards);
+  const cards = useRecoilValue(cardsAtom);
 
   return (
     <div className="CataloguePage">

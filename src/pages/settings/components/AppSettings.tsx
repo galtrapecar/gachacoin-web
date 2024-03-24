@@ -11,10 +11,12 @@ const AppSettings = () => {
 
   const onSelectColor = (color: AppColor) => {
     setColor(color);
+    localStorage.setItem('color', color);
   };
 
   const onSelectSymbol = (symbol: AppSymbol) => {
     setSymbol(symbol);
+    localStorage.setItem('symbol', symbol);
   };
 
   const getColorIconClass = (color: string) => {

@@ -56,6 +56,7 @@ const CircleDropdown = ({
         {items.map((item) => {
           return (
             <div
+              key={item.label}
               className="CircleDropdown__list__item"
               onClick={() => {
                 item.onSelect(item.value);

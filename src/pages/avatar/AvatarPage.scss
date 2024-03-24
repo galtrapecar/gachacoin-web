@@ -1,0 +1,120 @@
+.AvatarPage {
+  height: calc(100vh - 104px - 60px);
+  &__drawerCards {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 24px;
+    &__card {
+      transition: 0.3s;
+      position: relative;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &.selected {
+        &::after {
+          content: 'Selected';
+          padding: 4px 10px;
+          font-size: 10px;
+          font-weight: 500;
+          border-radius: 999px;
+          position: absolute;
+          top: 80%;
+          left: 85%;
+          transform: translateX(-55%) translateY(-50%);
+          background-color: $color-good500;
+        }
+      }
+    }
+    .CatalogueCard {
+      cursor: pointer;
+    }
+  }
+  &__avatar {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & div {
+      transition: all 0.3s;
+      position: relative;
+    }
+    & svg {
+      color: $color-mono700;
+    }
+    &__head {
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    &__body {
+      display: flex;
+      &--body {
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__arm {
+      &--left {
+        margin-right: -30px;
+        margin-top: 30px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      &--right {
+        margin-left: -30px;
+        margin-top: 30px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__feet {
+      display: flex;
+      gap: 70px;
+      margin-right: 10px;
+    }
+    &__foot {
+      &--left {
+        margin-top: -30px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      &--right {
+        margin-top: -30px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__render {
+      pointer-events: none;
+      position: absolute !important;
+      width: 574px;
+      height: 574px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

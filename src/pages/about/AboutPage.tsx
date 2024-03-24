@@ -70,31 +70,36 @@ const AboutPage = () => {
           the same security: Each Gocha is available in limited supply and 100%
           owned by you. It cannot be replicated, taken away, or destroyed.
         </p>
-        <h2 className="__team">GochaCoin Team</h2>
+        <div className="__title__wrapper">
+          <h5 className="__title">GochaCoin Team</h5>
+        </div>
         <div className="__teamMember__cards__container">
           {teamMembers.map((member, index) => (
             <div key={index}>{member.name}</div>
           ))}
         </div>
-        <h2 className="__manifesto">The Gocha Manifesto</h2>
+        <div className="__title__wrapper">
+          <h5 className="__title">The Gocha Manifesto</h5>
+        </div>
+
         <div className="__manifesto__container">
-          <p>
+          <p className="__column first">
             What we believe in, what we stand for, and why we're building Gocha.
             The future is exciting. And we believe that blockchain is the
             future—but blockchain is about as approachable as a bunch of ones
             and zeroes. We want a future for everyone, not one exclusive to
             Bitcoin miners, VCs, ICOs, and other equally fun acronyms.
           </p>
-          <p>
+          <p className="__column second">
             So why Digital weeaboo Collectables? Cats are impossible to
             understand. They're ambassadors for pharaohs, memes, and your mom's
             facebook page. They don't discriminate; they despise everyone
             equally
+            <h5 className="__ending">The future is Gocha</h5>
           </p>
-          <h5>The future is Gocha</h5>
         </div>
-        <div className="__footer__container">Footer</div>
       </div>
+      <div className="AboutPage__footer" />
     </div>
   );
 };

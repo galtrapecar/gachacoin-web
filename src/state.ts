@@ -37,7 +37,7 @@ export const walletPopupStatusAtom = atom({
   default: false,
 });
 
-type Card = {
+export type Card = {
   name: string;
   link: string;
   image: any;
@@ -107,4 +107,18 @@ export const filteredCards = selector<Card[]>({
     if (!filter) return cards;
     return cards.filter((card) => card.serial === filter);
   },
+});
+
+export type Avatar = {
+  head?: Card;
+  body?: Card;
+  armLeft?: Card;
+  armRight?: Card;
+  legs?: Card;
+  lookupTable: number[];
+};
+
+export const avatarAtom = atom<Avatar>({
+  key: 'avatarAtom',
+  default: { lookupTable: [0, 0, 0, 0, 0] },
 });

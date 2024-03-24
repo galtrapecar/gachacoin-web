@@ -1,2 +1,74 @@
 .AvatarPage {
+  height: calc(100vh - 104px - 60px);
+  &__avatar {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & div {
+      transition: all 0.3s;
+      position: relative;
+    }
+    & svg {
+        color: $color-mono700;
+    }
+    &__head {
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    &__body {
+      display: flex;
+      &--body {
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__arm {
+      &--left {
+        margin-right: -30px;
+        margin-top: 30px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      &--right {
+        margin-left: -30px;
+        margin-top: 30px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__feet {
+      display: flex;
+      gap: 70px;
+      margin-right: 10px;
+    }
+    &__foot {
+      &--left {
+        margin-top: -30px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      &--right {
+        margin-top: -30px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
 }

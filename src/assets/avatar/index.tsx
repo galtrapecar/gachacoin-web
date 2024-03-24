@@ -6,7 +6,7 @@ import { ReactComponent as FootLeft } from './foot_left.svg';
 import { ReactComponent as FootRight } from './foot_right.svg';
 import { ReactComponent as Head } from './head.svg';
 
-export const AvatarIcons = {
+const AvatarIcons = {
   Avatar,
   ArmLeft,
   ArmRight,
@@ -15,3 +15,5 @@ export const AvatarIcons = {
   FootRight,
   Head,
 };
+
+export default AvatarIcons;

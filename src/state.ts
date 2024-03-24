@@ -94,7 +94,7 @@ export const cardsAtom = atom({
   default: cards,
 });
 
-export const cardsFilterAtom = atom({
+export const cardsFilterAtom = atom<number | null>({
   key: 'cardsFilterAtom',
   default: null,
 });

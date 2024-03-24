@@ -1,15 +1,15 @@
 export type RainbowBorderProps = {
   background: string;
   borderRadius: number;
-  width: number;
   overlayRadius?: number;
+  width: number;
 };
 
 const RainbowBorder = ({
   background,
   borderRadius,
-  width,
   overlayRadius,
+  width,
 }: RainbowBorderProps) => {
   return (
     <div

@@ -22,12 +22,16 @@ export const colorAtom = atom({
   default: AppColor.Blue,
 });
 
-export const WalletConnectedAtom = atom({
-  key: 'WalletConnectedAtom',
-  default: false,
+export type Wallet = {
+  type: 'phantom' | 'metamask';
+}
+
+export const walletAtom = atom<Wallet | null>({
+  key: 'walletAtom',
+  default: null,
 });
 
-export const WalletPopupStatusAtom = atom({
-  key: 'WalletPopupStatusAtom',
+export const walletPopupStatusAtom = atom({
+  key: 'walletPopupStatusAtom',
   default: false,
 });

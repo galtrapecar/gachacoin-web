@@ -1,19 +1,20 @@
 import { useLocation, useNavigate } from 'react-router';
-import { useSetRecoilState } from 'recoil';
-import { WalletPopupStatusAtom } from '../../state';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { walletAtom, walletPopupStatusAtom } from '../../state';
 import Button from '../Button/Button';
 import Icons from '../../assets/icons';
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const isWalletConnected = () => false;
-  const setWalletPopUpStatus = useSetRecoilState(WalletPopupStatusAtom);
+  const setWalletPopUpStatus = useSetRecoilState(walletPopupStatusAtom);
+  const wallet = useRecoilValue(walletAtom);
 
   const openPopUp = () => {
     setWalletPopUpStatus(true);
   };
+
+  const isWalletConnected = () => wallet;
 
   const navItems = [
     {
@@ -24,12 +25,12 @@ const Header = () => {
     {
       label: 'Catalogue',
       route: '/catalogue',
-      isVisible: () => true,
+      isVisible: isWalletConnected,
     },
     {
       label: 'Marketplace',
       route: '/marketplace',
-      isVisible: () => true,
+      isVisible: isWalletConnected,
     },
     {
       label: 'Avatar',
@@ -42,6 +43,26 @@ const Header = () => {
       isVisible: () => true,
     },
   ];
+
+  const getButton = () => {
+    if (wallet) {
+      return (
+        <Button
+          style={'walletConnected'}
+          label={'Wallet connected'}
+          icon={<Icons.CheckmarkIcon />}
+          onClick={() => openPopUp()}
+        />
+      );
+    }
+    return (
+      <Button
+        style={'primary'}
+        label={'Connect wallet'}
+        onClick={() => openPopUp()}
+      />
+    );
+  };
 
   return (
     <div
@@ -56,11 +77,7 @@ const Header = () => {
         GachaCoin
       </div>
 
-      <Button
-        style="primary"
-        label={'Connect wallet'}
-        onClick={() => openPopUp()}
-      />
+      {getButton()}
       <div className="Header__nav">
         {navItems.map((navItem) => {
           if (!navItem.isVisible()) return;

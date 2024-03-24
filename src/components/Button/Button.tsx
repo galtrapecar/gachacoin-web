@@ -5,7 +5,7 @@ export type ButtonProps = {
   icon?: JSX.Element;
   label: string;
   onClick?: () => void;
-  style: 'primary' | 'secondary' | 'tertiary';
+  style: 'primary' | 'secondary' | 'tertiary' | 'walletConnected';
 };
 
 const Button = ({

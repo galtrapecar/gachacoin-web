@@ -51,7 +51,7 @@ export type Card = {
   collectionImage: any;
 };
 
-const cards = [
+export const mockCards = [
   {
     name: 'Doge Head',
     link: '../../assets/images/doge_head.png',
@@ -65,14 +65,6 @@ const cards = [
     link: '../../assets/images/doge_body.png',
     image: Doge.Body,
     serial: 2,
-    collection: 'Doge',
-    collectionImage: Doge.Collection,
-  },
-  {
-    name: 'Doge Left Arm',
-    link: '../../assets/images/doge_arm_left.png',
-    image: Doge.ArmLeft,
-    serial: 3,
     collection: 'Doge',
     collectionImage: Doge.Collection,
   },
@@ -96,7 +88,7 @@ const cards = [
 
 export const cardsAtom = atom({
   key: 'cardsAtom',
-  default: cards,
+  default: mockCards,
 });
 
 export const cardsFilterAtom = atom<number | null>({

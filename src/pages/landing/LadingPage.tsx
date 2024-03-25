@@ -1,6 +1,6 @@
 import useSpeedLines from '../../hooks/useSpeedLines';
 import Button from '../../components/Button/Button';
-import SpinPopup from '../../components/SpinPopup/SpinPopup';
+import SpinPopUp from '../../components/SpinPopUp/SpinPopUp';
 import { spinPopupStatusAtom } from '../../state';
 import { useRecoilState } from 'recoil';
 
@@ -14,7 +14,6 @@ const LandingPage = () => {
 
   return (
     <div className="LandingPage">
-      <SpinPopup isVisible={popupStatus} />
       <div className="LandingPage__background">{Canvas}</div>
       <div className="LandingPage__about">
         <div className="LandingPage__about__fold" />
@@ -25,6 +24,7 @@ const LandingPage = () => {
         borderWidth={8}
         onClick={() => displayPopup()}
       />
+      <SpinPopUp isVisible={popupStatus} />
     </div>
   );
 };

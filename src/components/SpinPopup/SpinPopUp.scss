@@ -1,57 +1,67 @@
-.SpinPopup {
+.SpinPopUp {
+  position: fixed;
   width: 542px;
   height: 808px;
+  z-index: 9999;
   background-color: $color-mono000;
   border-radius: 25px;
-  position: absolute;
   display: flex;
   align-items: center;
   flex-direction: column;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 200;
 
-  .RainbowBorder {
-    z-index: -1;
-  }
-
-  .__banner {
+  &__banner {
     font-size: 32px;
     font-weight: 600;
     margin-top: 31px;
   }
 
-  .__part {
+  &__part {
     font-size: 32px;
     font-weight: 600;
     margin: 5px 0 10px 0;
   }
 
-  .__text {
+  &__text {
     font-size: 20px;
     font-weight: 600;
   }
 
-  .__info {
+  &__info {
     font-size: 16px;
     font-weight: 600;
   }
 
-  .__icon__container {
+  &__icon__container {
     margin-top: 30px;
     margin-bottom: 20px;
     height: 355px;
     width: 500px;
     background-color: aliceblue;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-height: 100%;
+    }
   }
 
-  .__value__container {
+  &__value__container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
+  }
+
+  .RainbowBorder {
+    z-index: -1;
   }
 
   .Button {
@@ -64,5 +74,15 @@
   .Button__label {
     font-size: 22px;
     font-weight: 600;
+  }
+
+  &__overlay {
+    z-index: 9998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
   }
 }

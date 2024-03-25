@@ -1,6 +1,6 @@
 import { Route, Routes as Switch } from 'react-router';
 import { Routes } from './config';
-import LandingPage from './pages/landing/LadingPage';
+import LandingPage from './pages/landing/LandingPage';
 import Header from './components/Header/Header';
 import CataloguePage from './pages/catalogue/CataloguePage';
 import AboutPage from './pages/about/AboutPage';

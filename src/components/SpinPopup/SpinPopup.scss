@@ -1,0 +1,68 @@
+.SpinPopup {
+  width: 542px;
+  height: 808px;
+  background-color: $color-mono000;
+  border-radius: 25px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+
+  .RainbowBorder {
+    z-index: -1;
+  }
+
+  .__banner {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 31px;
+  }
+
+  .__part {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 5px 0 10px 0;
+  }
+
+  .__text {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .__info {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .__icon__container {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height: 355px;
+    width: 500px;
+    background-color: aliceblue;
+  }
+
+  .__value__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .Button {
+    position: absolute;
+    top: 720px;
+    width: 290px;
+    height: 64px;
+  }
+
+  .Button__label {
+    font-size: 22px;
+    font-weight: 600;
+  }
+}

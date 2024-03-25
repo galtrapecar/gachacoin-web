@@ -18,6 +18,11 @@ export const symbolAtom = atom({
   default: AppSymbol.Dot,
 });
 
+export const spinPopupStatusAtom = atom({
+  key: 'spinPopupStatusAtom',
+  default: false
+})
+
 export const colorAtom = atom({
   key: 'colorAtom',
   default: AppColor.Blue,

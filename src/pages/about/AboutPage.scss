@@ -1,8 +1,6 @@
-body {
-  overflow: auto;
-}
-
 .AboutPage {
+  overflow: scroll !important;
+
   &__content {
     display: flex;
     flex-direction: column;

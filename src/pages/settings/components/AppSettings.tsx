@@ -4,6 +4,7 @@ import CircleDropdown, {
   CircleDropdownItem,
 } from '../../../components/CircleDropdown/CircleDropdown';
 import { AppColor, AppSymbol, colorAtom, symbolAtom } from '../../../state';
+import { VERSION } from '../../../config';
 
 const AppSettings = () => {
   const [symbol, setSymbol] = useRecoilState(symbolAtom);
@@ -88,6 +89,7 @@ const AppSettings = () => {
           />
         </div>
       </div>
+      <div className="AppSettings__version">{`Version v${VERSION}`}</div>
     </div>
   );
 };

@@ -4,6 +4,7 @@
     flex-direction: column;
     gap: 40px;
   }
+
   &__item {
     display: flex;
     align-items: center;
@@ -35,5 +36,11 @@
 
   &__pink {
     background-color: $color-hot100;
+  }
+
+  &__version {
+    position: absolute;
+    bottom: 24px;
+    color: rgba($color: $color-mono1000, $alpha: 0.5);
   }
 }

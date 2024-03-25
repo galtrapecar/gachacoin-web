@@ -6,7 +6,7 @@
 
   .Button {
     position: absolute;
-    top: 72%;
+    top: 76%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
@@ -24,6 +24,43 @@
     top: 0;
     width: 100%;
     height: 100%;
+  }
+
+  &__gachapon {
+    position: absolute;
+    width: 424px;
+    height: 527px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+  }
+
+  &__textOverlay {
+    position: absolute;
+    z-index: 9997;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    &__text {
+      font-size: 73.11px;
+      font-weight: 600;
+      color: $color-mono700;
+      width: 10px;
+      word-break: break-word;
+      &:nth-child(1) {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+      }
+      &:nth-child(2) {
+        position: absolute;
+        top: 24px;
+        right: 104px;
+      }
+    }
   }
 
   &__about {

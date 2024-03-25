@@ -3,6 +3,8 @@ import { useSetRecoilState } from 'recoil';
 import Button from '../Button/Button';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
 import Icons from '../../assets/icons/index';
+import { useEffect, useState } from 'react';
+import { ProgressBar } from 'react-loader-spinner';
 
 export type SpinPopupProps = {
   isVisible: boolean;
@@ -10,8 +12,10 @@ export type SpinPopupProps = {
 
 const SpinPopup = ({ isVisible }: SpinPopupProps) => {
   const setSpinPopupStatus = useSetRecoilState(spinPopupStatusAtom);
+  const [loading, setLoading] = useState(true);
 
   const closePopup = () => {
+    setLoading(true);
     setSpinPopupStatus(false);
   };
 
@@ -22,29 +26,47 @@ const SpinPopup = ({ isVisible }: SpinPopupProps) => {
     value: 0.3,
   };
 
-  return isVisible ? (
-    <div className="SpinPopup">
-      <RainbowBorder width={10} borderRadius={25} background={'#ffffff'} />
-      <p className="__banner">Congratulations!</p>
-      <p className="__text">You received:</p>
-      <div className="__icon__container"></div>
-      <p className="__part">{part.name}</p>
-      <p className="__info">Collection: {part.collection}</p>
-      <p className="__info">Supply: {part.supply}</p>
-      <div className="__value__container">
-        <p className="__text">Value {part.value}</p>
-        <Icons.EthIcon width={27.5} height={45} />
-        <p className="__text"> ETH</p>
-      </div>
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 5000);
+  }, [isVisible]);
 
-      <Button
-        style="primary"
-        label="Open collection"
-        borderWidth={3.5}
-        onClick={() => closePopup()}
-      />
-    </div>
-  ) : null;
+  const func = () => {
+    return loading ? (
+      <div className="SpinPopup">
+        <RainbowBorder width={10} borderRadius={25} background={'#ffffff'} />
+        <ProgressBar
+          visible={true}
+          height="300"
+          width="300"
+          ariaLabel="progress-bar-loading"
+        />
+      </div>
+    ) : (
+      <div className="SpinPopup">
+        <RainbowBorder width={10} borderRadius={25} background={'#ffffff'} />
+        <p className="__banner">Congratulations!</p>
+        <p className="__text">You received:</p>
+        <div className="__icon__container"></div>
+        <p className="__part">{part.name}</p>
+        <p className="__info">Collection: {part.collection}</p>
+        <p className="__info">Supply: {part.supply}</p>
+        <div className="__value__container">
+          <p className="__text">Value {part.value}</p>
+          <Icons.EthIcon width={27.5} height={45} />
+          <p className="__text"> ETH</p>
+        </div>
+
+        <Button
+          style="primary"
+          label="Open collection"
+          borderWidth={3.5}
+          onClick={() => closePopup()}
+        />
+      </div>
+    );
+  };
+
+  return isVisible ? func() : null;
 };
 
 export default SpinPopup;

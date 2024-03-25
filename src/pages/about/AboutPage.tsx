@@ -3,6 +3,7 @@ import PageHeading from '../../components/PageHeading/PageHeading';
 import { symbolAtom } from '../../state';
 import Button from '../../components/Button/Button';
 import Icons from '../../assets/icons/index';
+import TeamMemberCard from '../../components/TeamMemberCard/TeamMemberCard';
 
 const AboutPage = () => {
   const symbol = useRecoilValue(symbolAtom);
@@ -75,7 +76,7 @@ const AboutPage = () => {
         </div>
         <div className="__teamMember__cards__container">
           {teamMembers.map((member, index) => (
-            <div key={index}>{member.name}</div>
+            <TeamMemberCard key={index} {...member} />
           ))}
         </div>
         <div className="__title__wrapper">
@@ -106,4 +107,6 @@ const AboutPage = () => {
 
 export default AboutPage;
 
-// FIXME: Scroll not working
+// FIXME: The Gocha manifesto columns not equal width
+// TODO: Add navigation buttons functionality
+// TODO: Update footer with content

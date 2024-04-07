@@ -6,14 +6,33 @@
   align-items: center;
   padding: 11px 25px;
 
+  &__left {
+    display: flex;
+    align-content: center;
+    justify-self: left;
+    width: 100%;
+  }
+
+  &__center {
+    justify-self: center;
+    width: 100%;
+  }
+
+  &__right {
+    justify-self: right;
+    width: 100%;
+  }
+
   &__logo {
     font-size: 32px;
     color: $color-mono700;
     font-weight: 300;
+    width: fit-content;
     cursor: pointer;
   }
 
   .Button {
+    width: fit-content;
     margin-left: 24px;
   }
 

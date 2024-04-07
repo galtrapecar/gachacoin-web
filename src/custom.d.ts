@@ -7,6 +7,10 @@ declare module '*.svg' {
   export default src;
 }
 
+declare module "@metamask/jazzicon" {
+  export default function (diameter: number, seed: number): HTMLElement;
+}
+
 declare module '*.json';
 declare module '*.png';
 declare module '*.jpeg';

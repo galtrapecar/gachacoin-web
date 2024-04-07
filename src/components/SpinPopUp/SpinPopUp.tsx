@@ -3,7 +3,7 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import Button from '../Button/Button';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
 import Icons from '../../assets/icons/index';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ProgressBar } from 'react-loader-spinner';
 import { Doge } from '../../assets/images';
 import { useNavigate } from 'react-router';
@@ -15,6 +15,7 @@ export type SpinPopUpProps = {
 
 const SpinPopUp = ({ isVisible }: SpinPopUpProps) => {
   const navigate = useNavigate();
+  const timeoutRef = useRef<any>(null);
   const setSpinPopUpStatus = useSetRecoilState(spinPopupStatusAtom);
   const [cards, setCards] = useRecoilState(cardsAtom);
   const [loading, setLoading] = useState(true);
@@ -33,26 +34,34 @@ const SpinPopUp = ({ isVisible }: SpinPopUpProps) => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      const cardToAdd = {
-        name: 'Doge Left Arm',
-        link: '../../assets/images/doge_arm_left.png',
-        image: Doge.ArmLeft,
-        serial: 3,
-        collection: 'Doge',
-        collectionImage: Doge.Collection,
-      };
-      if (cards.length !== 5) {
-        setCards(
-          [...cards, cardToAdd].sort((cardA, cardB) => {
-            if (cardA.serial < cardB.serial) return -1;
-            if (cardA.serial > cardB.serial) return 1;
-            return 0;
-          }),
-        );
-      }
-      setLoading(false);
-    }, 5000);
+    if (isVisible) {
+      setLoading(true);
+      clearTimeout(timeoutRef.current);
+      const timeout = setTimeout(() => {
+        clearTimeout(timeout);
+        const cardToAdd = {
+          name: 'Doge Left Arm',
+          link: '../../assets/images/doge_arm_left.png',
+          image: Doge.ArmLeft,
+          serial: 3,
+          collection: 'Doge',
+          collectionImage: Doge.Collection,
+        };
+        if (cards.length !== 5) {
+          setCards(
+            [...cards, cardToAdd].sort((cardA, cardB) => {
+              if (cardA.serial < cardB.serial) return -1;
+              if (cardA.serial > cardB.serial) return 1;
+              return 0;
+            }),
+          );
+        }
+        setLoading(false);
+      }, 5000);
+      timeoutRef.current = timeout;
+    } else {
+      setLoading(true);
+    }
   }, [isVisible]);
 
   if (!isVisible) return null;

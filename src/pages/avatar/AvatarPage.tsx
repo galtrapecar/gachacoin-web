@@ -33,25 +33,26 @@ const AvatarPage = () => {
 
   const selectCard = (card: Card) => {
     let newAvatar = { ...avatar };
+    const alreadySelected = isCardSelected(card.serial);
     switch (card.serial) {
       case 1:
-        newAvatar.head = card;
+        newAvatar.head = alreadySelected ? undefined : card;
         break;
       case 2:
-        newAvatar.body = card;
+        newAvatar.body = alreadySelected ? undefined : card;
         break;
       case 3:
-        newAvatar.armLeft = card;
+        newAvatar.armLeft = alreadySelected ? undefined : card;
         break;
       case 4:
-        newAvatar.armRight = card;
+        newAvatar.armRight = alreadySelected ? undefined : card;
         break;
       case 5:
-        newAvatar.legs = card;
+        newAvatar.legs = alreadySelected ? undefined : card;
         break;
     }
     newAvatar.lookupTable = [...avatar.lookupTable];
-    newAvatar.lookupTable[card.serial] = 1;
+    newAvatar.lookupTable[card.serial] = alreadySelected ? 0 : 1;
     setAvatar(newAvatar);
     setDrawerOpen(false);
   };

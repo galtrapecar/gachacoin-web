@@ -14,7 +14,7 @@ const Icons = {
   CollectionIcon,
   EthIcon,
   GearIcon,
-  MaticCoin: <img src={MaticCoin} />,
+  MaticCoin: <img src={MaticCoin} draggable={false} />,
   MetaMaskIcon,
   PhantomIcon,
   PlusCircleIcon,

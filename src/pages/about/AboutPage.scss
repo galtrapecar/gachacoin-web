@@ -72,14 +72,16 @@ body {
     .__manifesto__container {
       width: 100%;
       display: flex;
-      text-align: center;
+      text-align: left;
       justify-content: center;
+      gap: 20px;
 
       .__column {
         width: 30%;
       }
 
       .__ending {
+        text-align: right;
         padding-top: 30px;
       }
     }

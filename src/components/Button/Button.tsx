@@ -15,7 +15,7 @@ const Button = ({
   onClick,
   style,
 }: ButtonProps) => {
-  return style === 'primary' ? (
+  return style === 'primary' || style === 'walletConnected' ? (
     <div className={`Button ${style}`} onClick={onClick}>
       <RainbowBorder
         background={'#000000'}

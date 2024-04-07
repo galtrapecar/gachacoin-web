@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import jazzicon from '@metamask/jazzicon';
+import Button from '../Button/Button';
 
 type AccountFieldProps = {
   account: string;
@@ -26,12 +27,17 @@ const AccountField = ({ account, ethBalance }: AccountFieldProps) => {
     <div className="AccountField">
       <div className="AccountField__details">
         <div className="AccountField__details__balance">{ethBalance} ETH</div>
-        <div className="AccountField__details__account">
-          {[
+
+        <Button
+          style="secondary"
+          onClick={() => {}}
+          label={[
             account.slice(0, 5),
             account.slice(account.length - 3, account.length),
           ].join('...')}
-        </div>
+          bubbleLabel="bubble"
+        />
+
       </div>
       <div className="AccountField__icon" ref={iconRef} />
     </div>

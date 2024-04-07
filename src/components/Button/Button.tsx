@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
 
 export type ButtonProps = {
   borderWidth?: number;
+  bubbleLabel?: string;
   icon?: JSX.Element;
   label: string;
   onClick?: () => void;
@@ -10,18 +12,41 @@ export type ButtonProps = {
 
 const Button = ({
   borderWidth = 2,
+  bubbleLabel,
   icon,
   label,
   onClick,
   style,
 }: ButtonProps) => {
+  const [bubbleVisible, setBubbleVisible] = useState(false);
+
+  const bubbleShow = () => {
+    setBubbleVisible(true);
+  };
+
+  const bubbleHide = () => {
+    setBubbleVisible(false);
+  };
+
+  const renderBubble = () => {
+    return bubbleLabel && bubbleVisible ? (
+      <div className="Bubble">{bubbleLabel}</div>
+    ) : null;
+  };
+
   return (
-    <div className={`Button ${style}`} onClick={onClick}>
+    <div
+      className={`Button ${style}`}
+      onClick={onClick}
+      onMouseEnter={bubbleShow}
+      onMouseLeave={bubbleHide}
+    >
       <RainbowBorder
         background={'#000000'}
         borderRadius={999}
         width={borderWidth}
       />
+      {renderBubble()}
       <div className="Button__label">
         {icon}
         {label}

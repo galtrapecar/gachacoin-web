@@ -24,11 +24,20 @@
       display: flex;
       white-space: nowrap;
     }
-    &__account {
+
+    &__account,
+    &__button {
       padding: 4px 10px;
       border-radius: 999px;
       margin-right: 6px;
       border: 1px solid $color-mono1000;
+    }
+
+    &__button {
+      cursor: pointer;
+      &:hover {
+        background-color: rgba($color: $color-mono1000, $alpha: 0.1);
+      }
     }
   }
 }

@@ -34,7 +34,7 @@ const Button = ({
     ) : null;
   };
 
-  return (
+  return style === 'primary' || style === 'walletConnected' ? (
     <div
       className={`Button ${style}`}
       onClick={onClick}
@@ -47,6 +47,13 @@ const Button = ({
         width={borderWidth}
       />
       {renderBubble()}
+      <div className="Button__label">
+        {icon}
+        {label}
+      </div>
+    </div>
+  ) : (
+    <div className={`Button ${style}`} onClick={onClick}>
       <div className="Button__label">
         {icon}
         {label}

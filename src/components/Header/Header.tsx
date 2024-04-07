@@ -5,6 +5,8 @@ import Button from '../Button/Button';
 import Icons from '../../assets/icons';
 import { useSDK } from '@metamask/sdk-react';
 import AccountField from '../AccountField/AccountField';
+import BalanceField from '../BalanceField/BalanceField';
+import Web3 from 'web3';
 
 const Header = () => {
   const { sdk, connected, balance } = useSDK();
@@ -87,9 +89,18 @@ const Header = () => {
     );
   };
 
-  const getAccountField = () => {
+  const getFields = () => {
     if (!wallet || !wallet.account || !balance) return null;
-    return <AccountField account={wallet.account} ethBalance={balance} />;
+    const balanceEth = String(
+      Web3.utils.fromWei(Web3.utils.hexToNumber(balance || '0x0'), 'ether'),
+    );
+    return (
+      <div className='Header__center__fields'>
+        <AccountField account={wallet.account} />
+        <BalanceField balance={balanceEth} symbol="MATIC" icon={Icons.MaticCoin} />
+        <BalanceField balance={String(0)} symbol="GCH" icon={<Icons.Coin width={24} height={24} />} />
+      </div>
+    );
   };
 
   return (
@@ -107,9 +118,7 @@ const Header = () => {
         </div>
         {getButton()}
       </div>
-      <div className="Header__center">
-      {getAccountField()}
-      </div>
+      <div className="Header__center">{getFields()}</div>
 
       <div className="Header__right">
         <div className="Header__nav">

@@ -26,6 +26,10 @@
     background-color: $color-mono000;
     border-image-source: none;
     border: 2px solid $color-mono1000;
+
+    &:hover {
+      background-color: $color-mono200;
+    }
   }
 
   &.tertiary {

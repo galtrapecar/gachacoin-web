@@ -5,10 +5,9 @@ import Web3 from 'web3';
 
 type AccountFieldProps = {
   account: string;
-  ethBalance?: string;
 };
 
-const AccountField = ({ account, ethBalance }: AccountFieldProps) => {
+const AccountField = ({ account }: AccountFieldProps) => {
   const { chainId, provider } = useSDK();
   const iconRef = useRef<HTMLDivElement | null>(null);
 
@@ -69,17 +68,12 @@ const AccountField = ({ account, ethBalance }: AccountFieldProps) => {
     <div className="AccountField">
       <div className="AccountField__details">
         {isPolygonMumbai() && (
-          <>
-            <div className="AccountField__details__balance">
-              {String(Web3.utils.fromWei(Web3.utils.hexToNumber(ethBalance || '0x0'), 'ether'))} MATIC
-            </div>
-            <div className="AccountField__details__account">
-              {[
-                account.slice(0, 5),
-                account.slice(account.length - 3, account.length),
-              ].join('...')}
-            </div>
-          </>
+          <div className="AccountField__details__account">
+            {[
+              account.slice(0, 5),
+              account.slice(account.length - 3, account.length),
+            ].join('...')}
+          </div>
         )}
         {!isPolygonMumbai() && (
           <div

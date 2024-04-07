@@ -14,12 +14,17 @@
   }
 
   &__center {
-    justify-self: center;
     width: 100%;
+    display: flex;
+    align-items: center;
+    &__fields {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
   }
 
   &__right {
-    justify-self: right;
     width: 100%;
   }
 

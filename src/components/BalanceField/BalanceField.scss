@@ -1,7 +1,8 @@
-.AccountField {
+.BalanceField {
   display: flex;
   align-items: center;
   padding: 4px 6px;
+  padding-left: 10px;
   border-radius: 999px;
   border: 1px solid $color-mono1000;
   width: fit-content;
@@ -11,6 +12,11 @@
     width: 24px;
     height: 24px;
     border-radius: 999px;
+    overflow: hidden;
+    img {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &__details {
@@ -20,19 +26,9 @@
     font-weight: 400;
     font-size: 16px;
 
-    &__account,
-    &__button {
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-right: 6px;
-      border: 1px solid $color-mono1000;
-    }
-
-    &__button {
-      cursor: pointer;
-      &:hover {
-        background-color: rgba($color: $color-mono1000, $alpha: 0.1);
-      }
+    &__balance {
+      display: flex;
+      white-space: nowrap;
     }
   }
 }

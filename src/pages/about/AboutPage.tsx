@@ -48,13 +48,29 @@ const AboutPage = () => {
   return (
     <div className="AboutPage">
       <PageHeading title={'About'} symbol={symbol} subtitle={'について'} />
+      <div className="__navigation__panel">
+        <Button
+          style={'secondary'}
+          label={'About'}
+          icon={<Icons.Heart width={24} height={24} />}
+        />
+        <Button
+          style="secondary"
+          label="Technical details"
+          icon={<Icons.Wrench width={24} height={24} />}
+        />
+        <Button
+          style="secondary"
+          label="White paper"
+          icon={<Icons.Paper width={24} height={24} />}
+        />
+        <Button
+          style="secondary"
+          label="FAQ"
+          icon={<Icons.Questionmark width={24} height={24} />}
+        />
+      </div>
       <div className="AboutPage__content">
-        <div className="__navigation__panel">
-          <Button style="secondary" label="About" />
-          <Button style="secondary" label="Technical details" />
-          <Button style="secondary" label="White paper" />
-          <Button style="secondary" label="FAQ" />
-        </div>
         <Icons.Coin width={125} height={125} className="__coin__icon" />
         <p className="__introduction__text">
           With Gocha, users collect digital Kawaii collectables that can be

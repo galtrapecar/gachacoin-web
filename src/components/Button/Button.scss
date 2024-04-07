@@ -17,10 +17,13 @@
     z-index: 1;
     display: flex;
     gap: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
   &.secondary {
     color: $color-mono1000;
+    background-color: $color-mono000;
     border-image-source: none;
     border: 2px solid $color-mono1000;
   }

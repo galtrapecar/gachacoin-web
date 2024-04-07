@@ -15,13 +15,20 @@ const Button = ({
   onClick,
   style,
 }: ButtonProps) => {
-  return (
+  return style === 'primary' ? (
     <div className={`Button ${style}`} onClick={onClick}>
       <RainbowBorder
         background={'#000000'}
         borderRadius={999}
         width={borderWidth}
       />
+      <div className="Button__label">
+        {icon}
+        {label}
+      </div>
+    </div>
+  ) : (
+    <div className={`Button ${style}`} onClick={onClick}>
       <div className="Button__label">
         {icon}
         {label}

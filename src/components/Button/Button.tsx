@@ -18,42 +18,40 @@ const Button = ({
   onClick,
   style,
 }: ButtonProps) => {
-  const [bubbleVisible, setBubbleVisible] = useState(false);
-
-  const bubbleShow = () => {
-    setBubbleVisible(true);
-  };
-
-  const bubbleHide = () => {
-    setBubbleVisible(false);
-  };
+  const [bubble, setBubble] = useState(false);
 
   const renderBubble = () => {
-    return bubbleLabel && bubbleVisible ? (
-      <div className="Bubble">{bubbleLabel}</div>
+    return bubble && bubbleLabel ? (
+      <div className="Button__bubble">{bubbleLabel}</div>
     ) : null;
   };
 
+  const bubbleClick = () => {
+    if (onClick) {
+      onClick();
+      setBubble(true);
+      setTimeout(() => {
+        setBubble(false);
+      }, 2000);
+    }
+  };
+
   return style === 'primary' || style === 'walletConnected' ? (
-    <div
-      className={`Button ${style}`}
-      onClick={onClick}
-      onMouseEnter={bubbleShow}
-      onMouseLeave={bubbleHide}
-    >
+    <div className={`Button ${style}`} onClick={bubbleClick}>
+      {renderBubble()}
       <RainbowBorder
         background={'#000000'}
         borderRadius={999}
         width={borderWidth}
       />
-      {renderBubble()}
       <div className="Button__label">
         {icon}
         {label}
       </div>
     </div>
   ) : (
-    <div className={`Button ${style}`} onClick={onClick}>
+    <div className={`Button ${style}`} onClick={bubbleClick}>
+      {renderBubble()}
       <div className="Button__label">
         {icon}
         {label}

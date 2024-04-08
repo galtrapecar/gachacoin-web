@@ -1,6 +1,6 @@
 {
   "name": "gachacoin-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@metamask/jazzicon": "^2.0.0",

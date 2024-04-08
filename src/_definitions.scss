@@ -22,13 +22,10 @@ $gradient: linear-gradient(
 @mixin animation {
   @keyframes fadeOut {
     0% {
-      background-color: rgba($color-mono000, 1);
-    }
-    50% {
-      background-color: rgba($color-mono000, 0.5);
+      opacity: 1;
     }
     100% {
-      background-color: rgba($color-mono000, 0);
+      opacity: 0;
     }
   }
 }

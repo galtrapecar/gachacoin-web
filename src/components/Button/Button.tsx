@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
 
 export type ButtonProps = {
@@ -18,21 +18,23 @@ const Button = ({
   onClick,
   style,
 }: ButtonProps) => {
+  const bubbleRef = useRef<any>();
   const [bubble, setBubble] = useState(false);
 
   const renderBubble = () => {
-    return bubble && bubbleLabel ? (
-      <div className="Button__bubble">{bubbleLabel}</div>
+    return bubbleLabel ? (
+      <div className={`Button__bubble ${bubble ? 'show' : ''}`}>{bubbleLabel}</div>
     ) : null;
   };
 
   const bubbleClick = () => {
     if (onClick) {
+      clearTimeout(bubbleRef.current)
       onClick();
       setBubble(true);
-      setTimeout(() => {
+      bubbleRef.current = setTimeout(() => {
         setBubble(false);
-      }, 2000);
+      }, 1800);
     }
   };
 

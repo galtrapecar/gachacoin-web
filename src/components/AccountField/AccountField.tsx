@@ -68,7 +68,6 @@ const AccountField = ({ account }: AccountFieldProps) => {
   const copyWallet = async () => {
     try {
       await navigator.clipboard.writeText(account);
-      // console.log('Copied text: ', account);
     } catch (error) {
       console.log(error);
     }

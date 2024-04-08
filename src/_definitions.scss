@@ -18,3 +18,17 @@ $gradient: linear-gradient(
   #fdaeff 74%,
   #ff6477 100%
 );
+
+@mixin animation {
+  @keyframes fadeOut {
+    0% {
+      background-color: rgba($color-mono000, 1);
+    }
+    50% {
+      background-color: rgba($color-mono000, 0.5);
+    }
+    100% {
+      background-color: rgba($color-mono000, 0);
+    }
+  }
+}

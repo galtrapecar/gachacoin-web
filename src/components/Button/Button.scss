@@ -1,3 +1,5 @@
+@include animation;
+
 .Button {
   position: relative;
   display: flex;
@@ -45,9 +47,17 @@
   }
 
   &__bubble {
-    background-color: aqua;
+    background-color: $color-mono000;
+    border-radius: 12px;
+    border: 1px solid rgba($color-mono1000, 0.2);
+    width: 180px;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 20px;
     position: absolute;
     z-index: 999;
     top: 50px;
+
+    animation: fadeOut 2s;
   }
 }

@@ -65,18 +65,27 @@ const AccountField = ({ account }: AccountFieldProps) => {
     }
   };
 
+  const copyWallet = async () => {
+    try {
+      await navigator.clipboard.writeText(account);
+      // console.log('Copied text: ', account);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="AccountField">
       <div className="AccountField__details">
         {isPolygonMumbai() && (
           <Button
             style="secondary"
-            onClick={() => {}}
+            onClick={copyWallet}
             label={[
               account.slice(0, 5),
               account.slice(account.length - 3, account.length),
             ].join('...')}
-            bubbleLabel="bubble"
+            bubbleLabel="Copied to clipboard"
           />
         )}
         {!isPolygonMumbai() && (

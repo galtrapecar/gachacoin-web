@@ -18,3 +18,14 @@ $gradient: linear-gradient(
   #fdaeff 74%,
   #ff6477 100%
 );
+
+@mixin animation {
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}

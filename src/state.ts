@@ -30,6 +30,8 @@ export const colorAtom = atom({
 
 export type Wallet = {
   type: 'phantom' | 'metamask';
+  accounts?: string[];
+  account?: string;
 };
 
 export const walletAtom = atom<Wallet | null>({

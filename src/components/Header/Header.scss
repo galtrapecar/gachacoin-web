@@ -6,15 +6,47 @@
   align-items: center;
   padding: 11px 25px;
 
+  &__left {
+    display: flex;
+    align-content: center;
+    justify-self: left;
+    width: 100%;
+
+    .Button {
+      width: fit-content;
+      margin-left: 24px;
+    }
+  }
+
+  &__center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &__fields {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .Button {
+      border: 1px solid $color-mono1000;
+      font-size: 16px;
+      padding: 4px 8px;
+      margin-right: 8px;
+      margin-left: 8px;
+    }
+  }
+
+  &__right {
+    width: 100%;
+  }
+
   &__logo {
     font-size: 32px;
     color: $color-mono700;
     font-weight: 300;
+    width: fit-content;
     cursor: pointer;
-  }
-
-  .Button {
-    margin-left: 24px;
   }
 
   &__nav {

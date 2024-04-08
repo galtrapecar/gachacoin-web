@@ -4,12 +4,14 @@ import Icons from '../../assets/icons';
 import RainbowBorder from '../RainbowBorder/RainbowBorder';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { walletAtom, walletPopupStatusAtom } from '../../state';
+import { useSDK } from '@metamask/sdk-react';
 
 export type WalletPopUpProps = {
   isVisible: boolean;
 };
 
 const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
+  const { sdk } = useSDK();
   const setWalletPopUpStatus = useSetRecoilState(walletPopupStatusAtom);
   const [wallet, setWallet] = useRecoilState(walletAtom);
 
@@ -25,18 +27,26 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
     }
   }, [isVisible]);
 
-  const selectPhantom = () => {
-    setWallet({
-      type: 'phantom',
-    });
-    closePopUp();
-  };
+  // const selectPhantom = () => {
+  //   setWallet({
+  //     type: 'phantom',
+  //   });
+  //   closePopUp();
+  // };
 
-  const selectMetamask = () => {
-    setWallet({
-      type: 'metamask',
-    });
-    closePopUp();
+  const connectMetamask = async () => {
+    try {
+      const accounts = (await sdk?.connect()) as string[];
+      setWallet({
+        type: 'metamask',
+        accounts: Array.isArray(accounts) ? accounts : undefined,
+        account: accounts?.[0],
+      });
+    } catch (err) {
+      console.warn('failed to connect..', err);
+    } finally {
+      closePopUp();
+    }
   };
 
   const getTitle = () => {
@@ -48,7 +58,7 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
     if (!wallet) {
       return (
         <>
-          <Icons.PhantomIcon width={169} height={141} />
+          {/* <Icons.PhantomIcon width={169} height={141} /> */}
           <Icons.MetaMaskIcon width={153} height={141} />
         </>
       );
@@ -72,17 +82,17 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
 
         {!wallet && (
           <>
-            <Button
+            {/* <Button
               style="primary"
               label="Use Phantom"
               borderWidth={6}
               onClick={() => selectPhantom()}
-            />
+            /> */}
             <Button
               style="primary"
               label="Use MetaMask"
               borderWidth={6}
-              onClick={() => selectMetamask()}
+              onClick={() => connectMetamask()}
             />
           </>
         )}

@@ -4,6 +4,7 @@ import './root.scss';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
+import { MetaMaskProvider } from '@metamask/sdk-react';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -11,9 +12,18 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <MetaMaskProvider
+        sdkOptions={{
+          dappMetadata: {
+            name: 'GachaCoin',
+            url: window.location.href,
+          },
+        }}
+      >
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </MetaMaskProvider>
     </RecoilRoot>
   </React.StrictMode>,
 );

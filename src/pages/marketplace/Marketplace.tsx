@@ -74,7 +74,7 @@ const MarketplacePage = () => {
       <PageHeading
         title={'Marketplace'}
         symbol={symbol}
-        subtitle={'カタログ'}
+        subtitle={'マーケットプレイス'}
       />
       <div className="Marketplace__cards">
         {cards.map((card, index) => (

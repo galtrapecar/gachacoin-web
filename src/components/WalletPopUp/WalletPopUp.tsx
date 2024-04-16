@@ -17,7 +17,6 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
 
   const closePopUp = () => {
     setWalletPopUpStatus(false);
-    document.body.style.overflow = 'unset'; // makes the page scrollable
   };
 
   // removes scroll for the page while the pop-up is open
@@ -25,14 +24,16 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
     if (isVisible) {
       document.body.style.overflow = 'hidden';
     }
+    return () => {
+      if (window.location.pathname === '/') {
+        // if you are on landing page
+        document.body.style.overflow = 'hidden'; // disable scroll
+      } else {
+        // anywhere else
+        document.body.style.overflow = 'initial'; // enable scroll
+      }
+    };
   }, [isVisible]);
-
-  // const selectPhantom = () => {
-  //   setWallet({
-  //     type: 'phantom',
-  //   });
-  //   closePopUp();
-  // };
 
   const connectMetamask = async () => {
     try {
@@ -58,7 +59,6 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
     if (!wallet) {
       return (
         <>
-          {/* <Icons.PhantomIcon width={169} height={141} /> */}
           <Icons.MetaMaskIcon width={153} height={141} />
         </>
       );
@@ -82,12 +82,6 @@ const WalletPopUp = ({ isVisible }: WalletPopUpProps) => {
 
         {!wallet && (
           <>
-            {/* <Button
-              style="primary"
-              label="Use Phantom"
-              borderWidth={6}
-              onClick={() => selectPhantom()}
-            /> */}
             <Button
               style="primary"
               label="Use MetaMask"

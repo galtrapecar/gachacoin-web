@@ -12,19 +12,21 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <MetaMaskProvider
-        sdkOptions={{
-          extensionOnly: true,
-          dappMetadata: {
-            name: 'GachaCoin',
-            url: window.location.href,
-          },
-        }}
-      >
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </MetaMaskProvider>
+      <Suspense fallback={'...loading'}>
+        <MetaMaskProvider
+          sdkOptions={{
+            extensionOnly: true,
+            dappMetadata: {
+              name: 'GachaCoin',
+              url: window.location.href,
+            },
+          }}
+        >
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </MetaMaskProvider>
+      </Suspense>
     </RecoilRoot>
   </React.StrictMode>,
 );

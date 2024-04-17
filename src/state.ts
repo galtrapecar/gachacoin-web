@@ -20,12 +20,30 @@ export const symbolAtom = atom({
 
 export const spinPopupStatusAtom = atom({
   key: 'spinPopupStatusAtom',
-  default: false
-})
+  default: false,
+});
 
 export const colorAtom = atom({
   key: 'colorAtom',
   default: AppColor.Blue,
+});
+
+export const balanceAtom = selector({
+  key: 'balanceAtom',
+  get: async ({ get }) => {
+    const wallet = get(walletAtom);
+    if (wallet && window.ethereum) {
+      try {
+        const fetched = await window.ethereum.request({
+          method: 'eth_getBalance',
+          params: [wallet.account, 'latest'],
+        });
+        if (typeof fetched == 'string') return fetched;
+      } catch (err) {
+        console.error(err);
+      }
+    } else return '';
+  },
 });
 
 export type Wallet = {

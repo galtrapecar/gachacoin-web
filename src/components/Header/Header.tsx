@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from 'react-router';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { useSDK } from '@metamask/sdk-react';
-import { walletAtom, walletPopupStatusAtom } from '../../state';
+import { balanceAtom, walletAtom, walletPopupStatusAtom } from '../../state';
 import AccountField from '../AccountField/AccountField';
 import BalanceField from '../BalanceField/BalanceField';
 import Button from '../Button/Button';
@@ -10,12 +9,12 @@ import useWallet from '../../hooks/useWallet';
 import Web3 from 'web3';
 
 const Header = () => {
-  const { balance } = useSDK();
   const navigate = useNavigate();
   const location = useLocation();
   const setWalletPopUpStatus = useSetRecoilState(walletPopupStatusAtom);
   const { connectWallet } = useWallet();
   const wallet = useRecoilValue(walletAtom);
+  const balance = useRecoilValue(balanceAtom);
 
   const openPopUp = () => {
     setWalletPopUpStatus(true);
@@ -77,10 +76,11 @@ const Header = () => {
   };
 
   const getFields = () => {
-    if (!wallet || !wallet.account) return null;
-    const balanceEth = String(
-      Web3.utils.fromWei(Web3.utils.hexToNumber(balance || '0x0'), 'ether'),
+    if (!wallet || !wallet.account || !balance) return null;
+    let balanceEth = String(
+      Web3.utils.fromWei(Web3.utils.hexToNumber(balance), 'ether'),
     );
+
     return (
       <div className="Header__center__fields">
         <AccountField account={wallet.account} />

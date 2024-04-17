@@ -8,7 +8,7 @@ const useWallet = () => {
   useEffect(() => {
     if (window && window.ethereum?.isMetaMask) {
       addWalletListener();
-      if (sessionStorage.getItem('prevConnection') == 'true') {
+      if (localStorage.getItem('prevConnection') === 'true') {
         reconnectWallet();
       }
 
@@ -27,7 +27,7 @@ const useWallet = () => {
 
   const connectWallet = async () => {
     // logic to connect the wallet
-    if (window != undefined && window.ethereum) {
+    if (window !== undefined && window.ethereum) {
       // metamask installed
       try {
         const accounts = (await window.ethereum.request({
@@ -36,7 +36,7 @@ const useWallet = () => {
         if (accounts && accounts.length > 0) {
           updateWallet(accounts);
           // indicator to next time connect automatically
-          sessionStorage.setItem('prevConnection', JSON.stringify(true));
+          localStorage.setItem('prevConnection', JSON.stringify(true));
         } else {
           console.warn('No accounts were retrieved from MetaMask');
         }
@@ -69,7 +69,7 @@ const useWallet = () => {
   };
 
   const reconnectWallet = async () => {
-    if (window != undefined && window.ethereum) {
+    if (window !== undefined && window.ethereum) {
       // metamask installed
       try {
         // get connected accounts
@@ -97,7 +97,7 @@ const useWallet = () => {
     const [accounts] = args as [string[]];
     if (accounts.length === 0) {
       disconnectWallet();
-      sessionStorage.clear();
+      localStorage.removeItem('prevConnection');
       window.location.reload();
     } else {
       updateWallet(accounts);

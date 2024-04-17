@@ -16,6 +16,7 @@ const useWallet = () => {
       return () => {
         if (provider) {
           provider.removeListener('accountsChanged', handleAccountChange);
+          provider.removeListener('chainChanged', handleChainChange);
         }
       };
     } else {
@@ -88,9 +89,11 @@ const useWallet = () => {
   const addWalletListener = () => {
     if (provider) {
       provider.on('accountsChanged', handleAccountChange);
+      provider.on('chainChanged', handleChainChange);
     }
   };
 
+  // wallet listener handlers
   const handleAccountChange = async (...args: unknown[]) => {
     const [accounts] = args as [string[]];
     if (accounts.length === 0) {
@@ -100,6 +103,12 @@ const useWallet = () => {
     } else {
       updateWallet(accounts);
     }
+  };
+
+  const handleChainChange = async (...args: unknown[]) => {
+    const [chain] = args as string[];
+    localStorage.removeItem('prevConnection');
+    window.location.reload();
   };
 
   const updateWallet = (accounts: string[]) => {

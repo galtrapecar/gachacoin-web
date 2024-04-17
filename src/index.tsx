@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './root.scss';
 import App from './App';
@@ -14,6 +14,7 @@ root.render(
     <RecoilRoot>
       <MetaMaskProvider
         sdkOptions={{
+          extensionOnly: true,
           dappMetadata: {
             name: 'GachaCoin',
             url: window.location.href,

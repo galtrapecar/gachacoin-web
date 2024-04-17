@@ -1,23 +1,21 @@
 import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { walletAtom } from '../state';
 
 const useWallet = () => {
-  const [wallet, setWallet] = useRecoilState(walletAtom);
+  const setWallet = useSetRecoilState(walletAtom);
+  const provider = window.ethereum;
 
   useEffect(() => {
-    if (window && window.ethereum?.isMetaMask) {
+    if (window && provider?.isMetaMask) {
       addWalletListener();
       if (localStorage.getItem('prevConnection') === 'true') {
         reconnectWallet();
       }
 
       return () => {
-        if (window.ethereum) {
-          window.ethereum.removeListener(
-            'accountsChanged',
-            handleAccountChange,
-          );
+        if (provider) {
+          provider.removeListener('accountsChanged', handleAccountChange);
         }
       };
     } else {
@@ -27,10 +25,10 @@ const useWallet = () => {
 
   const connectWallet = async () => {
     // logic to connect the wallet
-    if (window !== undefined && window.ethereum) {
+    if (window !== undefined && provider) {
       // metamask installed
       try {
-        const accounts = (await window.ethereum.request({
+        const accounts = (await provider.request({
           method: 'eth_requestAccounts',
         })) as string[];
         if (accounts && accounts.length > 0) {
@@ -48,10 +46,10 @@ const useWallet = () => {
 
   const disconnectWallet = async () => {
     // logic to disconnect the wallet
-    if (window.ethereum) {
+    if (provider) {
       try {
         // revoke permissions
-        await window.ethereum.request({
+        await provider.request({
           method: 'wallet_revokePermissions',
           params: [
             {
@@ -69,11 +67,11 @@ const useWallet = () => {
   };
 
   const reconnectWallet = async () => {
-    if (window !== undefined && window.ethereum) {
-      // metamask installed
+    if (window !== undefined && provider) {
+      // provider installed
       try {
         // get connected accounts
-        const accounts = (await window.ethereum.request({
+        const accounts = (await provider.request({
           method: 'eth_accounts',
         })) as string[];
         if (accounts && accounts.length > 0) {
@@ -88,8 +86,8 @@ const useWallet = () => {
   };
 
   const addWalletListener = () => {
-    if (window.ethereum) {
-      window.ethereum.on('accountsChanged', handleAccountChange);
+    if (provider) {
+      provider.on('accountsChanged', handleAccountChange);
     }
   };
 

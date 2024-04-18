@@ -30,7 +30,15 @@ const LandingPage = () => {
   return (
     <div className="LandingPage">
       <div className="LandingPage__background">{Canvas}</div>
-      <img className="LandingPage__gachapon" src={GachaPon.Image} />
+      <div className="LandingPage__center__container">
+        <img className="LandingPage__gachapon" src={GachaPon.Image} />
+        <Button
+          style="primary"
+          label="SPIN"
+          borderWidth={8}
+          onClick={() => displayPopup()}
+        />
+      </div>
       <div className="LandingPage__textOverlay">
         <div className="LandingPage__textOverlay__text">
           ウィンビッグ{Array(1).fill(character)}
@@ -40,12 +48,6 @@ const LandingPage = () => {
       <div className="LandingPage__about">
         <div className="LandingPage__about__fold" />
       </div>
-      <Button
-        style="primary"
-        label="SPIN"
-        borderWidth={8}
-        onClick={() => displayPopup()}
-      />
       <SpinPopUp isVisible={popupStatus} />
     </div>
   );

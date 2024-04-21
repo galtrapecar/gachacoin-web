@@ -35,7 +35,9 @@ const MarketplaceCard = ({
       <div className="MarketplaceCard__info__container">
         <div className="MarketplaceCard__text__container">
           <p className="MarketplaceCard__title">{name}</p>
-          <p className="MarketplaceCard__price">{price} <Icons.EthIcon width={8} height={8}/> ETH</p>
+          <p className="MarketplaceCard__price">
+            {price} <Icons.EthIcon width={8} height={8} /> ETH
+          </p>
           <p className="MarketplaceCard__seller">Seller: {seller}</p>
         </div>
         <div className="MarketplaceCard__icon">
@@ -51,7 +53,3 @@ const MarketplaceCard = ({
 };
 
 export default MarketplaceCard;
-
-// TODO: Buy button functionality
-// TODO: Add ETH icon to price
-// TODO: Dynamically render images and collection icons

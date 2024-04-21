@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './root.scss';
 import App from './App';
@@ -12,18 +12,21 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <MetaMaskProvider
-        sdkOptions={{
-          dappMetadata: {
-            name: 'GachaCoin',
-            url: window.location.href,
-          },
-        }}
-      >
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </MetaMaskProvider>
+      <Suspense fallback={'...loading'}>
+        <MetaMaskProvider
+          sdkOptions={{
+            extensionOnly: true,
+            dappMetadata: {
+              name: 'GachaCoin',
+              url: window.location.href,
+            },
+          }}
+        >
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </MetaMaskProvider>
+      </Suspense>
     </RecoilRoot>
   </React.StrictMode>,
 );

@@ -1,12 +1,12 @@
 import { useLocation, useNavigate } from 'react-router';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
+import Web3 from 'web3';
+import Icons from '../../assets/icons';
+import useWallet from '../../hooks/useWallet';
 import { balanceAtom, walletAtom, walletPopupStatusAtom } from '../../state';
 import AccountField from '../AccountField/AccountField';
 import BalanceField from '../BalanceField/BalanceField';
 import Button from '../Button/Button';
-import Icons from '../../assets/icons';
-import useWallet from '../../hooks/useWallet';
-import Web3 from 'web3';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -85,12 +85,12 @@ const Header = () => {
       <div className="Header__center__fields">
         <AccountField account={wallet.account} />
         <BalanceField
-          balance={balanceEth}
+          balance={parseFloat(balanceEth).toFixed(1) || '0.0'}
           symbol="MATIC"
           icon={Icons.MaticCoin}
         />
         <BalanceField
-          balance={String(0)}
+          balance={'0.0'}
           symbol="GCH"
           icon={<Icons.Coin width={24} height={24} />}
         />

@@ -25,9 +25,9 @@ const AccountField = ({ account }: AccountFieldProps) => {
     }
   }, [account, iconRef]);
 
-  const isPolygonMumbai = () => {
+  const isAmoy = () => {
     const chainIdInt = Web3.utils.hexToNumber(chainId || '0x0');
-    if (chainIdInt !== 80001) return false;
+    if (chainIdInt !== 80002) return false;
     return true;
   };
 
@@ -38,10 +38,10 @@ const AccountField = ({ account }: AccountFieldProps) => {
         method: 'wallet_addEthereumChain',
         params: [
           {
-            chainName: 'Polygon Mumbai',
-            chainId: Web3.utils.toHex(80001),
+            chainName: 'Polygon Amoy Testnet',
+            chainId: Web3.utils.toHex(80002),
             nativeCurrency: { name: 'MATIC', decimals: 18, symbol: 'MATIC' },
-            rpcUrls: ['https://polygon-mumbai-bor-rpc.publicnode.com'],
+            rpcUrls: ['https://rpc-amoy.polygon.technology/'],
           },
         ],
       });
@@ -55,7 +55,7 @@ const AccountField = ({ account }: AccountFieldProps) => {
     try {
       await provider.request({
         method: 'wallet_switchEthereumChain',
-        params: [{ chainId: Web3.utils.toHex(80001) }],
+        params: [{ chainId: Web3.utils.toHex(80002) }],
       });
     } catch (err: any) {
       // This error code indicates that the chain has not been added to MetaMask
@@ -76,7 +76,7 @@ const AccountField = ({ account }: AccountFieldProps) => {
   return (
     <div className="AccountField">
       <div className="AccountField__details">
-        {isPolygonMumbai() && (
+        {isAmoy() && (
           <Button
             style="secondary"
             onClick={copyWallet}
@@ -87,7 +87,7 @@ const AccountField = ({ account }: AccountFieldProps) => {
             bubbleLabel="Copied to clipboard"
           />
         )}
-        {!isPolygonMumbai() && (
+        {!isAmoy() && (
           <div
             className="AccountField__details__button"
             onClick={() => switchToPolygon()}

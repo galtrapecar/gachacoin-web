@@ -1,5 +1,3 @@
-import Web3 from 'web3';
-
 type BalanceFieldProps = {
   balance: string;
   symbol: string;

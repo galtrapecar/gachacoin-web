@@ -42,7 +42,7 @@ export const balanceAtom = selector({
       } catch (err) {
         console.error(err);
       }
-    } else return '';
+    } else return '0.0';
   },
 });
 

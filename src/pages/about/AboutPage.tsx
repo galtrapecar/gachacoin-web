@@ -1,9 +1,9 @@
 import { useRecoilValue } from 'recoil';
-import PageHeading from '../../components/PageHeading/PageHeading';
-import { symbolAtom } from '../../state';
-import Button from '../../components/Button/Button';
 import Icons from '../../assets/icons/index';
+import Button from '../../components/Button/Button';
+import PageHeading from '../../components/PageHeading/PageHeading';
 import TeamMemberCard from '../../components/TeamMemberCard/TeamMemberCard';
+import { symbolAtom } from '../../state';
 
 const AboutPage = () => {
   const symbol = useRecoilValue(symbolAtom);
@@ -15,33 +15,18 @@ const AboutPage = () => {
       image: '../../assets/images/placeholder.jpeg',
     },
     {
-      name: 'John Wick',
-      position: 'Lead developer',
+      name: 'Gal Trapečar',
+      position: 'The Boss',
       image: '../../assets/images/placeholder.jpeg',
     },
     {
-      name: 'John Wick',
-      position: 'Lead developer',
+      name: 'Jakob Beber',
+      position: 'Google docs engineer',
       image: '../../assets/images/placeholder.jpeg',
     },
     {
-      name: 'John Wick',
-      position: 'Lead developer',
-      image: '../../assets/images/placeholder.jpeg',
-    },
-    {
-      name: 'John Wick',
-      position: 'Lead developer',
-      image: '../../assets/images/placeholder.jpeg',
-    },
-    {
-      name: 'John Wick',
-      position: 'Lead developer',
-      image: '../../assets/images/placeholder.jpeg',
-    },
-    {
-      name: 'John Wick',
-      position: 'Lead developer',
+      name: 'Urban Novak',
+      position: 'developer, figma designer, QA tester',
       image: '../../assets/images/placeholder.jpeg',
     },
   ];
